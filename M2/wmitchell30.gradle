@@ -3,3 +3,13 @@ apply plugin: 'java'
 description = "Will Mitchell's Gradle build"
 version = "1.0"
 
+jar {
+    manifest {
+        attributes 'Implementation-Title': description,
+                   'Implementation-Version': version
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
