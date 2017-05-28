@@ -1,0 +1,5 @@
+apply plugin: 'java'
+
+description = "Will Mitchell's Gradle build"
+version = "1.0"
+
