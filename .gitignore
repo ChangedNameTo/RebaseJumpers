@@ -4,3 +4,6 @@
 # Log file
 *.log
 
+/build/
+
+
