@@ -7,7 +7,7 @@
 /build/
 
 # IntelliJ
-.idea
+.idea/
 
 # Macs
 .ds_store
