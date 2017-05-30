@@ -1,11 +1,8 @@
 package edu.gatech.oad.antlab.person;
 
-<<<<<<< HEAD
 import java.util.*;
 import java.util.stream.StreamSupport;
 
-=======
->>>>>>> f167e9f... maddy #comment Unfuckulated
 /**
  *  A simple class for person 2
  *  returns their name and a

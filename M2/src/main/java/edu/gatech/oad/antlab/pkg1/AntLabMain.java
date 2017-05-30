@@ -41,11 +41,6 @@ import edu.gatech.oad.antlab.pkg2.*;
         ant21 = new AntLab21();
         ant22 = new AntLab22();
         ant31 = new AntLab31();
-<<<<<<< HEAD
-=======
-        
-        
->>>>>>> f167e9f... maddy #comment Unfuckulated
     }
     
     /**
