@@ -6,10 +6,18 @@ version = "1.0"
 jar {
     manifest {
         attributes 'Implementation-Title': description,
+<<<<<<< HEAD
                 'Implementation-Version': version
+=======
+                   'Implementation-Version': version
+>>>>>>> 773ff37... Create mby3.gradle
     }
 }
 
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 773ff37... Create mby3.gradle
