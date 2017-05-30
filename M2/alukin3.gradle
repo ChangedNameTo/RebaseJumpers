@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+description = "Andrey Lukin's new gradle file"
+version = "1.0"
+
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': description,
+                'Implementation-Version': version
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
