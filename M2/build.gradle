@@ -1,0 +1,7 @@
+description = "A trivial Gradle build"
+version = "1.0"
+
+task copy(type: Copy) {
+    from 'src'
+    into 'dest'
+}
