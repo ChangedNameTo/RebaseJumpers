@@ -3,10 +3,14 @@ apply plugin: 'java'
 description = "Amir Ghorbanian's Gradle build"
 version = "1.0"
 
+
+
 jar {
     manifest {
         attributes 'Implementation-Title': description,
-                'Implementation-Version': version
+                'Implementation-Version': version,
+                'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+                'Class-Path' : "../../lib/resources.jar"
     }
 }
 
