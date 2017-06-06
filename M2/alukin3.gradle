@@ -1,3 +1,4 @@
+defaultTasks 'jar'
 apply plugin: 'java'
 
 description = "Andrey Lukin's new gradle file"
