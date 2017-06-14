@@ -37,6 +37,10 @@
             android:name="com.example.maddy.maddylogin.RegistrationActivity1"
             android:label="@string/title_activity_registration1"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.maddy.maddylogin.Logout_Screen"
+            android:label="@string/title_activity_logout__screen"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

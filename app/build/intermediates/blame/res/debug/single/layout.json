@@ -108,12 +108,12 @@
         "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout/abc_popup_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
@@ -190,6 +190,10 @@
     {
         "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout/activity_logout__screen.xml",
+        "source": "/Users/maddy/Desktop/RebaseJumpers/app/src/main/res/layout/activity_logout__screen.xml"
     },
     {
         "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
@@ -362,6 +366,10 @@
     {
         "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
         "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout/content_logout__screen.xml",
+        "source": "/Users/maddy/Desktop/RebaseJumpers/app/src/main/res/layout/content_logout__screen.xml"
     },
     {
         "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout/activity_registration1.xml",
