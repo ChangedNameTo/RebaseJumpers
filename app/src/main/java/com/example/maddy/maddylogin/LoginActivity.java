@@ -167,6 +167,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
 
+        // Local variables
         boolean cancel = false;
         View focusView = null;
 
@@ -188,6 +189,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             cancel = true;
         }
 
+        // Cancellation parts
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
