@@ -1,2 +1,0 @@
-Tommy McCormick
-tmccormick30@gatech.edu
