@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/res/layout-v11/notification_template_big_media.xml"
+    }
+]
