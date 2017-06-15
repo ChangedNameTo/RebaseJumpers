@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/maddy/Desktop/MaddyLogin/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    }
+]
