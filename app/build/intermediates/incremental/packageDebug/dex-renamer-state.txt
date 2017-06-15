@@ -1,7 +1,0 @@
-#Tue Jun 13 20:51:00 EDT 2017
-base.0=/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d0b80440e9ef173f3d26241f8b96722533f2829c
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_39f75e71d5af0dfae52f656f5c627125c1624143/classes.dex
-base.1=/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_39f75e71d5af0dfae52f656f5c627125c1624143
-file.0=/Users/maddy/Desktop/RebaseJumpers/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d0b80440e9ef173f3d26241f8b96722533f2829c/classes.dex
