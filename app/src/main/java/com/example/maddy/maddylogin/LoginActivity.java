@@ -242,14 +242,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             });
 
             Button cancelButton = (Button)findViewById(R.id.cancel_button);
-            cancelButton.setOnClickListener(new OnClickListener() {
-                @Override
+            cancelButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    try {
-                        cancelLogin();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    cancelLogin();
                 }
             });
         } else {
@@ -260,8 +255,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
-    private void cancelLogin() throws InterruptedException {
-        throw new InterruptedException( "User cancelled the login process" );
+    private void cancelLogin() {
+        mAuthTask = null;
     }
 
     @Override
@@ -339,6 +334,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
+                if( mAuthTask == null ) {
+                    throw new InterruptedException( "User hit cancel" );
+                }
             } catch (InterruptedException e) {
                 return false;
             }

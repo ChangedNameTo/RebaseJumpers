@@ -1,125 +1,125 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:2:1-36:12
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:2:1-36:12
 	package
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:3:5-43
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:3:5-43
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:6:5-71
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:6:5-71
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:6:22-68
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:6:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:7:5-71
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:7:5-71
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:7:22-68
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:7:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:8:5-72
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:8:5-72
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:8:22-69
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:8:22-69
 application
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:10:5-34:19
-MERGED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maddy/.android/build-cache/8f95d78f87f1c110f0416d8478c384d4998c13b8/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maddy/.android/build-cache/18add22d61589892af4d2f89a81b57783dda4530/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.1] /Users/maddy/.android/build-cache/769e6b93a4185c1035c856155b0c1bdb0cb93291/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:25.3.1] /Users/maddy/.android/build-cache/f65052c7daf4ed7f30c6bc421e16ef30bc0a2940/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/maddy/.android/build-cache/00d207822f547ff8130af38df2c2041dc7bf49a8/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/maddy/.android/build-cache/4798d6f982bf314bfabefd9a41ac44ce21f5a1d6/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/maddy/.android/build-cache/9ca47f3ba3fbbdded40b48bd799c70041faf7d66/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/maddy/.android/build-cache/ae1d4824ae88aec2463aff77117726a13f189e9f/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /Users/maddy/.android/build-cache/9f0663ca04a9e28a76ff92a2e4dbd086d0cebeb7/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] /Users/maddy/.android/build-cache/b5ed2a51cec961a358b5efdc0f2d60a220dd0fc4/output/AndroidManifest.xml:9:5-20
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:10:5-34:19
+MERGED from [com.android.support:design:25.3.1] /home/will/.android/build-cache/833e9765aded29a24de00f3c073abc36d74325b0/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/will/.android/build-cache/0152ec2841add1119a316ec78fac9ed74f387427/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/will/.android/build-cache/eaea1e5c82a2431a2ce62f311a0ad6ab9de9bb58/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/will/.android/build-cache/1971f5315bfdc1cce3a7c9f447e05fb5db1b0462/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] /home/will/.android/build-cache/ef970eb6741b1ad55bc467b503583d5645b6463c/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /home/will/.android/build-cache/f51a423b5d068380a90dfd588ba2f2011da38cf9/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/will/.android/build-cache/89ad57df901871d7de77eea4e008afcca2b3d05e/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/will/.android/build-cache/919efd6ff7716bb6cd5b695f258fb0520dc2e2a5/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/will/.android/build-cache/b9ef9709b80e27147377047f09dc419d0d4bfbe9/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/will/.android/build-cache/0a73a5c1488e6dd57823b0255016fc9c7de60033/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/will/.android/build-cache/5bd26e715558d8bc000799c13e2992c109d01b71/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] /home/will/.android/build-cache/ccc5b53265869654a110f730b81858d93291e1bf/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:13:9-41
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:13:9-41
 	android:supportsRtl
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:15:9-35
 	android:roundIcon
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:14:9-54
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:14:9-54
 	android:allowBackup
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:11:9-35
 	android:icon
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:12:9-43
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:12:9-43
 	android:theme
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:16:9-40
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:16:9-40
 activity#com.example.maddy.maddylogin.LoginActivity
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:17:9-25:20
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:17:9-25:20
 	android:label
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:19:13-45
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:19:13-45
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:18:13-42
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:18:13-42
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:20:13-24:29
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:21:17-69
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:23:17-77
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:23:27-74
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:23:27-74
 activity#com.example.maddy.maddylogin.RegistrationActivity1
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:26:9-29:59
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:26:9-29:59
 	android:label
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:28:13-65
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:28:13-65
 	android:theme
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:29:13-56
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:27:13-50
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:27:13-50
 activity#com.example.maddy.maddylogin.Logout_Screen
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:30:9-33:68
+ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:30:9-33:68
 	android:label
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:32:13-66
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:32:13-66
 	android:theme
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:33:13-56
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:33:13-56
 	android:name
-		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:31:13-42
+		ADDED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml:31:13-42
 uses-sdk
-INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maddy/.android/build-cache/8f95d78f87f1c110f0416d8478c384d4998c13b8/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maddy/.android/build-cache/18add22d61589892af4d2f89a81b57783dda4530/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/maddy/.android/build-cache/132c6f31a21a9734b8f53ae1a5e427d5f42f47d7/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.1] /Users/maddy/.android/build-cache/769e6b93a4185c1035c856155b0c1bdb0cb93291/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.3.1] /Users/maddy/.android/build-cache/f65052c7daf4ed7f30c6bc421e16ef30bc0a2940/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/maddy/.android/build-cache/00d207822f547ff8130af38df2c2041dc7bf49a8/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/maddy/.android/build-cache/4798d6f982bf314bfabefd9a41ac44ce21f5a1d6/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/maddy/.android/build-cache/9ca47f3ba3fbbdded40b48bd799c70041faf7d66/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/maddy/.android/build-cache/ae1d4824ae88aec2463aff77117726a13f189e9f/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.1] /Users/maddy/.android/build-cache/9f0663ca04a9e28a76ff92a2e4dbd086d0cebeb7/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] /Users/maddy/.android/build-cache/b5ed2a51cec961a358b5efdc0f2d60a220dd0fc4/output/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:design:25.3.1] /home/will/.android/build-cache/833e9765aded29a24de00f3c073abc36d74325b0/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/will/.android/build-cache/0152ec2841add1119a316ec78fac9ed74f387427/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/will/.android/build-cache/eaea1e5c82a2431a2ce62f311a0ad6ab9de9bb58/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/will/.android/build-cache/1971f5315bfdc1cce3a7c9f447e05fb5db1b0462/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/will/.android/build-cache/1c17086c3961ff628f5e863c07d4eadb5297e484/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] /home/will/.android/build-cache/ef970eb6741b1ad55bc467b503583d5645b6463c/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] /home/will/.android/build-cache/f51a423b5d068380a90dfd588ba2f2011da38cf9/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /home/will/.android/build-cache/89ad57df901871d7de77eea4e008afcca2b3d05e/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/will/.android/build-cache/919efd6ff7716bb6cd5b695f258fb0520dc2e2a5/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/will/.android/build-cache/b9ef9709b80e27147377047f09dc419d0d4bfbe9/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/will/.android/build-cache/0a73a5c1488e6dd57823b0255016fc9c7de60033/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /home/will/.android/build-cache/5bd26e715558d8bc000799c13e2992c109d01b71/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha7] /home/will/.android/build-cache/ccc5b53265869654a110f730b81858d93291e1bf/output/AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.1] /home/will/.android/build-cache/833e9765aded29a24de00f3c073abc36d74325b0/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
+		INJECTED from /home/will/Documents/School/RebaseJumpers/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maddy/.android/build-cache/8f95d78f87f1c110f0416d8478c384d4998c13b8/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maddy/.android/build-cache/18add22d61589892af4d2f89a81b57783dda4530/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/maddy/.android/build-cache/132c6f31a21a9734b8f53ae1a5e427d5f42f47d7/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.1] /Users/maddy/.android/build-cache/769e6b93a4185c1035c856155b0c1bdb0cb93291/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.1] /Users/maddy/.android/build-cache/f65052c7daf4ed7f30c6bc421e16ef30bc0a2940/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/maddy/.android/build-cache/00d207822f547ff8130af38df2c2041dc7bf49a8/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/maddy/.android/build-cache/4798d6f982bf314bfabefd9a41ac44ce21f5a1d6/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/maddy/.android/build-cache/9ca47f3ba3fbbdded40b48bd799c70041faf7d66/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/maddy/.android/build-cache/ae1d4824ae88aec2463aff77117726a13f189e9f/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] /Users/maddy/.android/build-cache/9f0663ca04a9e28a76ff92a2e4dbd086d0cebeb7/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.1] /home/will/.android/build-cache/833e9765aded29a24de00f3c073abc36d74325b0/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/will/.android/build-cache/0152ec2841add1119a316ec78fac9ed74f387427/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/will/.android/build-cache/eaea1e5c82a2431a2ce62f311a0ad6ab9de9bb58/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/will/.android/build-cache/1971f5315bfdc1cce3a7c9f447e05fb5db1b0462/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/will/.android/build-cache/1c17086c3961ff628f5e863c07d4eadb5297e484/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] /home/will/.android/build-cache/ef970eb6741b1ad55bc467b503583d5645b6463c/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] /home/will/.android/build-cache/f51a423b5d068380a90dfd588ba2f2011da38cf9/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/will/.android/build-cache/89ad57df901871d7de77eea4e008afcca2b3d05e/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/will/.android/build-cache/919efd6ff7716bb6cd5b695f258fb0520dc2e2a5/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/will/.android/build-cache/b9ef9709b80e27147377047f09dc419d0d4bfbe9/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/will/.android/build-cache/0a73a5c1488e6dd57823b0255016fc9c7de60033/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/will/.android/build-cache/5bd26e715558d8bc000799c13e2992c109d01b71/output/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.1] /home/will/.android/build-cache/833e9765aded29a24de00f3c073abc36d74325b0/output/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.1] /home/will/.android/build-cache/833e9765aded29a24de00f3c073abc36d74325b0/output/AndroidManifest.xml:26:9-47
