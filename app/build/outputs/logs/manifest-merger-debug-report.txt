@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:2:1-32:12
+ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:3:5-43
 		INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml
@@ -26,7 +26,7 @@ ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:8
 	android:name
 		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:8:22-69
 application
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:10:5-30:19
+ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:10:5-34:19
 MERGED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maddy/.android/build-cache/40dd29e320f19334b9b97ca9d983e01012fe2650/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maddy/.android/build-cache/8f95d78f87f1c110f0416d8478c384d4998c13b8/output/AndroidManifest.xml:26:5-20
@@ -68,13 +68,21 @@ ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:2
 	android:name
 		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:23:27-74
 activity#com.example.maddy.maddylogin.RegistrationActivity1
-ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:26:9-29:68
+ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:26:9-29:59
 	android:label
 		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:28:13-65
 	android:theme
 		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:29:13-56
 	android:name
 		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:27:13-50
+activity#com.example.maddy.maddylogin.Logout_Screen
+ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:30:9-33:68
+	android:label
+		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:32:13-66
+	android:theme
+		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:33:13-56
+	android:name
+		ADDED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml:31:13-42
 uses-sdk
 INJECTED from /Users/maddy/Desktop/RebaseJumpers/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.3.1] /Users/maddy/.android/build-cache/907def94231cb0bfec10f148e5dab9bdaf71becb/output/AndroidManifest.xml:21:5-23:62
