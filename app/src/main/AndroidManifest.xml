@@ -26,6 +26,10 @@
         <activity
             android:name=".RegistrationActivity1"
             android:label="@string/title_activity_registration1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Logout_Screen"
+            android:label="@string/title_activity_logout__screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

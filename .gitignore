@@ -4,10 +4,13 @@
 # Log file
 *.log
 
-/build/
-
-# IntelliJ
-.idea/
-
-# Macs
-.ds_store
+# Shamelessly stolen from github
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
