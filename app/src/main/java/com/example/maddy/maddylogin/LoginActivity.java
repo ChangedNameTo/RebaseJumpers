@@ -3,6 +3,8 @@ package com.example.maddy.maddylogin;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -33,6 +35,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.Manifest.permission.DUMP;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -99,6 +102,24 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 startActivity(new Intent(LoginActivity.this, RegistrationActivity1.class));
             }
         });
+
+        Button forgotPasswordButton = (Button) findViewById(R.id.forgot_password);
+        forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                AlertDialog alertDialog = new AlertDialog.Builder(LoginActivity.this).create();
+                alertDialog.setTitle("Forgotten Password");
+                String pass = DUMMY_CREDENTIALS[0].split(":")[1];
+                alertDialog.setMessage("Your password is: " + pass);
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
+
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
