@@ -102,6 +102,12 @@
                 android:layout_weight="1.50"
                 android:text="REGISTER" />
 
+            <Button
+                android:id="@+id/forgot_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
