@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "420311957319",
+    "firebase_url": "https://rebasejumpers.firebaseio.com",
+    "project_id": "rebasejumpers",
+    "storage_bucket": "rebasejumpers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420311957319:android:c77b6f503f989678",
+        "android_client_info": {
+          "package_name": "com.example.maddy.maddylogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420311957319-e43oulq6d1btapj1fi8732kukmpjc91n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl-08Y3XkhymcmyLXSUqVtB18aMTJaZ2Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
