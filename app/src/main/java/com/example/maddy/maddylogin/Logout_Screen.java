@@ -16,15 +16,6 @@ public class Logout_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout__screen);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
         Button logoutButton = (Button) findViewById(R.id.button2);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
