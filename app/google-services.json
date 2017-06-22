@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "420311957319-qcl8524mleu9fa1la2400dbhntili8mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maddy.maddylogin",
+            "certificate_hash": "4e9c72df179e439d7f564ec5da64890dffcf6093"
+          }
+        },
+        {
           "client_id": "420311957319-e43oulq6d1btapj1fi8732kukmpjc91n.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420311957319-e43oulq6d1btapj1fi8732kukmpjc91n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

@@ -7,6 +7,7 @@
     tools:context="com.example.maddy.maddylogin.RegistrationActivity1">
 
     <RelativeLayout
+        android:id="@+id/registration_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -27,10 +28,10 @@
             android:layout_alignStart="@+id/textView2"
             android:layout_below="@+id/textView2"
             android:layout_marginTop="18dp"
-            android:text="Create New Username/Email:" />
+            android:text="Create New Email:" />
 
-        <EditText
-            android:id="@+id/editText"
+        <AutoCompleteTextView
+            android:id="@+id/user_email_string"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/textView3"
@@ -43,27 +44,28 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/editText"
-            android:layout_below="@+id/editText"
+            android:layout_alignStart="@+id/user_email_string"
+            android:layout_below="@+id/user_email_string"
             android:layout_marginTop="26dp"
-            android:text="Create New Password:" />
+            android:text="Create New Password
+            (these are stored plain text, do not use a real one):" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/password_string"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/editText"
-            android:layout_below="@+id/textView4"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
-            android:inputType="numberPassword" />
+            android:inputType="textPassword"
+            android:layout_below="@+id/textView4"
+            android:layout_alignStart="@+id/textView4" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/registration_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/editText2"
-            android:layout_below="@+id/editText2"
+            android:layout_alignStart="@+id/password_string"
+            android:layout_below="@+id/password_string"
             android:layout_marginTop="25dp"
             android:text="REGISTER" />
     </RelativeLayout>
