@@ -16,10 +16,17 @@ public class Logout_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout__screen);
 
-        Button logoutButton = (Button) findViewById(R.id.button2);
+        Button logoutButton = (Button) findViewById(R.id.logout_button);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(Logout_Screen.this, LoginActivity.class));
+            }
+        });
+
+        Button itemListButton = (Button) findViewById(R.id.item_list_button);
+        itemListButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(Logout_Screen.this, ItemView.class));
             }
         });
     }
