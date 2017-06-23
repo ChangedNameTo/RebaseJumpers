@@ -32,6 +32,10 @@
             android:name=".Logout_Screen"
             android:label="@string/title_activity_logout__screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ItemView"
+            android:label="Item List"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

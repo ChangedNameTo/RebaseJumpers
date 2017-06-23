@@ -1,13 +1,20 @@
 package com.example.maddy.maddylogin;
 
+<<<<<<< HEAD
 import android.os.Parcel;
 import android.os.Parcelable;
 
+=======
+>>>>>>> origin/master
 /**
  * Created by andrey on 6/21/17.
  */
 
+<<<<<<< HEAD
 public class Item implements Parcelable {
+=======
+public class Item {
+>>>>>>> origin/master
     private String name;
 
     public Item(String name) {
@@ -21,6 +28,7 @@ public class Item implements Parcelable {
     public void setName(String name) {
         this.name = name;
     }
+<<<<<<< HEAD
 
     @Override
     public int describeContents() {
@@ -46,4 +54,6 @@ public class Item implements Parcelable {
             return new Item[size];
         }
     };
+=======
+>>>>>>> origin/master
 }
