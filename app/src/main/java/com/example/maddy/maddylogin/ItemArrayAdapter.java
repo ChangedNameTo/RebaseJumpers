@@ -1,15 +1,11 @@
 package com.example.maddy.maddylogin;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,50 +14,41 @@ import java.util.ArrayList;
  * Created by andrey on 6/21/17.
  */
 
-public class ItemArrayAdapter extends RecyclerView.Adapter<ItemArrayAdapter.ViewHolder> {
-    //All methods in this adapter are required for a bare minimum recyclerview adapter
-    private int listItemLayout;
-    private ArrayList<Item> itemList;
-    // Constructor of the class
-    public ItemArrayAdapter(int layoutId, ArrayList<Item> itemList) {
-        listItemLayout = layoutId;
-        this.itemList = itemList;
+public class ItemArrayAdapter extends BaseAdapter {
+
+    Context context;
+    ArrayList<Item> list;
+    private static LayoutInflater inflater = null;
+
+    public ItemArrayAdapter(Context context, ArrayList<Item> list) {
+        this.context = context;
+        this.list = list;
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    // get the size of the list
     @Override
-    public int getItemCount() {
-        return itemList == null ? 0 : itemList.size();
+    public int getCount() {
+        return list.size();
     }
 
-
-    // specify the row layout file and click for each row
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(listItemLayout, parent, false);
-        ViewHolder myViewHolder = new ViewHolder(view);
-        return myViewHolder;
+    public Object getItem(int position) {
+        return list.get(position);
     }
 
-    // load data in each row element
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int listPosition) {
-        TextView item = holder.item;
-        item.setText(itemList.get(listPosition).getName());
+    public long getItemId(int position) {
+        return position;
     }
 
-    // Static inner class to initialize the views of rows
-    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView item;
-        public ViewHolder(View itemView) {
-            super(itemView);
-            itemView.setOnClickListener(this);
-            item = (TextView) itemView.findViewById(R.id.row_item);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View vi = convertView;
+        if (vi == null) {
+            vi = inflater.inflate(R.layout.list_item, null);
         }
-        @Override
-        public void onClick(View view) {
-            Log.d("onclick", "onClick " + getLayoutPosition() + " " + item.getText());
-        }
+        TextView text = (TextView) vi.findViewById(R.id.list_item);
+        text.setText(list.get(position).getName());
+        return vi;
     }
-
 }

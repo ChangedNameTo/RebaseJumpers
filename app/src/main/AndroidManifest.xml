@@ -36,6 +36,10 @@
             android:name=".ItemView"
             android:label="Item List"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".NewItemActivity"
+            android:label="New Item"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

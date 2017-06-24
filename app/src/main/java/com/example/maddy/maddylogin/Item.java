@@ -5,13 +5,22 @@ package com.example.maddy.maddylogin;
  */
 
 public class Item {
+    private String itemName;
     private String name;
 
-    public Item(String name) {
+    public Item(String itemName, String name) {
+        this.itemName = itemName;
         this.name = name;
     }
 
     public String getName() {
+        if(itemName==null) {
+            return "System";
+        }
+        return itemName;
+    }
+
+    public String getEmail() {
         return name;
     }
 
