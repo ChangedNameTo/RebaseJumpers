@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.maddy.maddylogin.Logout_Screen"
+    tools:context="com.example.RB.rebasejumpers.Logout_Screen"
     tools:showIn="@layout/activity_logout__screen">
 
 </android.support.constraint.ConstraintLayout>

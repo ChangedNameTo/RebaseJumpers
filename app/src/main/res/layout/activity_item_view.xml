@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context="com.example.maddy.maddylogin.ItemView">
+    tools:context="com.example.RB.rebasejumpers.ItemView">
 
     <ListView
         android:id="@+id/list_view"
