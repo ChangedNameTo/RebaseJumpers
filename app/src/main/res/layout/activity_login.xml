@@ -105,9 +105,16 @@
             <Button
                 android:id="@+id/forgot_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Forgot Password" />
+
+            <Button
+                android:id="@+id/goToBanPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Banned Page" />
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

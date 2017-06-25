@@ -100,6 +100,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        Button bannedButton = (Button) findViewById(R.id.goToBanPage);
+        bannedButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, Banned_Unbanned.class));
+            }
+        });
+
+
         Button forgotPasswordButton = (Button) findViewById(R.id.forgot_password);
         forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -230,14 +238,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                 startActivity(new Intent(LoginActivity.this, Logout_Screen.class));
                             } else {
                                 // If sign in fails, display a message to the user.
+                                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
                                 numberOfTries++;
-                                if (numberOfTries > 2) {
-                                    Toast.makeText(LoginActivity.this, "You are banned from the account.",
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
+                                sendToBan();
                                 cancelLogin();
                             }
                         }
@@ -290,6 +294,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     cancelLogin();
                 }
             });
+
         } else {
             // The ViewPropertyAnimator APIs are not available, so simply show
             // and hide the relevant UI components.
@@ -301,6 +306,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void cancelLogin() {
         mAuth = null;
         startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+    }
+
+    private void sendToBan() {
+        if (numberOfTries == 3) {
+            startActivity(new Intent(LoginActivity.this, Banned_Unbanned.class));
+        }
     }
 
     @Override
