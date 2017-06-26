@@ -30,9 +30,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,34 +38,45 @@ import java.util.regex.Matcher;
 import static android.Manifest.permission.READ_CONTACTS;
 import static com.example.RB.rebasejumpers.LoginActivity.VALID_EMAIL_ADDRESS_REGEX;
 
-public class RegistrationActivity1 extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+/**
+ * The type Registration activity 1.
+ */
+public class RegistrationActivity1
+        extends AppCompatActivity
+        implements LoaderManager.LoaderCallbacks<Cursor> {
+
     // Id to identify READ_CONTACTS permission request
     private static final int REQUEST_READ_CONTACTS = 0;
     private static final String TAG = "RegisterUser";
 
-    // Firebase references
-    private FirebaseAuth mAuth;
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mReference;
 
     // View references
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
-    private View mRegistrationView;
+
+    /**
+     * The M auth.
+     */
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration1);
 
         // Set up views
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.user_email_string);
+        mEmailView = (AutoCompleteTextView)
+                findViewById(R.id.user_email_string);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password_string);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mPasswordView.setOnEditorActionListener(
+                new TextView.OnEditorActionListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+            public boolean onEditorAction(
+                    final TextView textView,
+                    final int id,
+                    final KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
                     registerUser();
                     return true;
@@ -77,26 +85,20 @@ public class RegistrationActivity1 extends AppCompatActivity implements LoaderMa
             }
         });
 
-        // Setup Firebase auth and db
-        mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance();
-        mReference = mDatabase.getReference();
-
-        Button registrationButton = (Button) findViewById(R.id.registration_button);
+        Button registrationButton = (Button)
+                findViewById(R.id.registration_button);
         registrationButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 registerUser();
             }
         });
-
-        mRegistrationView = findViewById(R.id.registration_form);
     }
 
     /**
      * Creates a user in firebase with the given email and password. Since
-     * this is a basic app, passwords are not hashed. This is not acceptable in a
-     * full size app, but shortcuts are shortcuts.
+     * this is a basic app, passwords are not hashed.
+     * This is not acceptable in a full size app, but shortcuts are shortcuts.
      *
      * WARNING TO ANYONE REVIEWING THIS CODE. DO NOT USE REAL PASSWORDS.
      * THEY ARE STORED IN PLAIN TEXT. DO NOT USE REAL PASSWORDS.
@@ -134,14 +136,15 @@ public class RegistrationActivity1 extends AppCompatActivity implements LoaderMa
 
         if (!cancel) {
             mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    .addOnCompleteListener(this,
+                            new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                        public void onComplete(final @NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "createUserWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                startActivity(new Intent(RegistrationActivity1.this, Logout_Screen.class));
+                                startActivity(
+                                        new Intent(RegistrationActivity1.this,
+                                                LogoutScreen.class));
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -207,13 +210,35 @@ public class RegistrationActivity1 extends AppCompatActivity implements LoaderMa
         mEmailView.setAdapter(adapter);
     }
 
+    /**
+     * The type User.
+     */
     public static class User {
+        /**
+         * The Email.
+         */
         public String email;
+        /**
+         * The Username.
+         */
         public String username;
+        /**
+         * The Password.
+         */
         public String password;
 
+        /**
+         * Instantiates a new User.
+         */
         public User() {}
 
+        /**
+         * Instantiates a new User.
+         *
+         * @param email    the email
+         * @param username the username
+         * @param password the password
+         */
         public User(String email, String username, String password) {
             this.email = email;
             this.username = username;
@@ -252,12 +277,21 @@ public class RegistrationActivity1 extends AppCompatActivity implements LoaderMa
     }
 
     private interface ProfileQuery {
+        /**
+         * The Projection.
+         */
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
                 ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
         };
 
+        /**
+         * The constant ADDRESS.
+         */
         int ADDRESS = 0;
+        /**
+         * The constant IS_PRIMARY.
+         */
         int IS_PRIMARY = 1;
     }
 }

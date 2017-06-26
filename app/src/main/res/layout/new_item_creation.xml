@@ -25,6 +25,7 @@
             android:layout_alignStart="@+id/textView2"
             android:layout_below="@+id/textView2"
             android:layout_marginTop="26dp"
+            android:labelFor="@+id/item_name"
             android:text="What item is missing?" />
 
         <EditText
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:ems="10"
+            android:inputType="text"
             android:layout_below="@+id/textView4"
             android:layout_alignStart="@+id/textView4" />
 

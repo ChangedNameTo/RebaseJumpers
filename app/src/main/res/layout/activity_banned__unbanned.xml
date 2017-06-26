@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> origin/will
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context="com.example.RB.rebasejumpers.Banned_Unbanned">
+=======
+    tools:context="com.example.RB.rebasejumpers.BannedUnbanned">
+>>>>>>> origin/will
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
@@ -18,7 +27,11 @@
         android:layout_height="match_parent">
 
         <Button
+<<<<<<< HEAD
             android:id="@+id/unbanButton"
+=======
+            android:id="@+id/unBanButton"
+>>>>>>> origin/will
             android:layout_width="366dp"
             android:layout_height="62dp"
             android:layout_alignParentBottom="true"
@@ -36,7 +49,11 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_alignParentTop="true"
+<<<<<<< HEAD
             android:layout_alignStart="@+id/unbanButton" />
+=======
+            android:layout_alignStart="@+id/unBanButton" />
+>>>>>>> origin/will
 
     </RelativeLayout>
 

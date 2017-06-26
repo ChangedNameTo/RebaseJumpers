@@ -23,7 +23,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -39,14 +45,26 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class LoginActivity
+        extends AppCompatActivity
+        implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
+<<<<<<< HEAD:app/src/main/java/com/example/RB/rebasejumpers/LoginActivity.java
     // Email regex
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+=======
+    /**
+     * The constant VALID_EMAIL_ADDRESS_REGEX.
+     */
+// Email regex
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
+                    Pattern.CASE_INSENSITIVE);
+>>>>>>> origin/will:app/src/main/java/com/example/RB/rebasejumpers/LoginActivity.java
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -61,7 +79,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -73,9 +91,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mPasswordView.setOnEditorActionListener(
+                new TextView.OnEditorActionListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+            public boolean onEditorAction(
+                    final TextView textView,
+                    final int id, final KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
                     attemptLogin();
                     return true;
@@ -84,10 +105,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        final Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        final Button mEmailSignInButton =
+                (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 attemptLogin();
             }
         });
@@ -95,31 +117,39 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         Button registerButton = (Button) findViewById(R.id.register);
         registerButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RegistrationActivity1.class));
+            public void onClick(final View view) {
+                startActivity(new Intent(LoginActivity.this,
+                        RegistrationActivity1.class));
             }
         });
 
         Button bannedButton = (Button) findViewById(R.id.goToBanPage);
         bannedButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, Banned_Unbanned.class));
+            public void onClick(final View view) {
+                startActivity(new Intent(LoginActivity.this,
+                        BannedUnbanned.class));
             }
         });
 
+        Button forgotPasswordButton =
+                (Button) findViewById(R.id.forgot_password);
 
-        Button forgotPasswordButton = (Button) findViewById(R.id.forgot_password);
         forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                AlertDialog alertDialog = new AlertDialog.Builder(LoginActivity.this).create();
+            public void onClick(final View view) {
+                AlertDialog alertDialog =
+                        new AlertDialog.Builder(LoginActivity.this).create();
                 alertDialog.setTitle("Forgotten Password");
 
                 mAuth.sendPasswordResetEmail(mEmailView.getText().toString())
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                .addOnCompleteListener(
+                                        new OnCompleteListener<Void>() {
                                     @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
+                                    public void onComplete(
+                                            final @NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(LoginActivity.this, "Email sent.",
+                                            Toast.makeText(
+                                                    LoginActivity.this,
+                                                    "Email sent.",
                                                     Toast.LENGTH_SHORT).show();
                                         }
                                     }
@@ -127,7 +157,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                         new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
+                            public void onClick(
+                                    final DialogInterface dialog,
+                                    final int which) {
                                 dialog.dismiss();
                             }
                         });
@@ -152,20 +184,26 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
         }
-        if (checkSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(READ_CONTACTS)
+                == PackageManager.PERMISSION_GRANTED) {
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(mEmailView,
+                    R.string.permission_rationale,
+                    Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         @TargetApi(Build.VERSION_CODES.M)
-                        public void onClick(View v) {
-                            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
+                        public void onClick(final View v) {
+                            requestPermissions(
+                                    new String[]{READ_CONTACTS},
+                                    REQUEST_READ_CONTACTS);
                         }
                     });
         } else {
-            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
+            requestPermissions(new String[]{READ_CONTACTS},
+                    REQUEST_READ_CONTACTS);
         }
         return false;
     }
@@ -174,10 +212,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Callback received when a permissions request has been completed.
      */
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(final int requestCode,
+                                           final @NonNull String[] permissions,
+                                           final @NonNull int[] grantResults) {
         if (requestCode == REQUEST_READ_CONTACTS) {
-            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length == 1
+                    && grantResults[0]
+                    == PackageManager.PERMISSION_GRANTED) {
                 populateAutoComplete();
             }
         }
@@ -230,15 +271,22 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // perform the user login attempt.
             showProgress(true);
             mAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    .addOnCompleteListener(this,
+                            new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                        public void onComplete(
+                                final @NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                startActivity(new Intent(LoginActivity.this, Logout_Screen.class));
+                                // Sign in success,
+                                // update UI with the
+                                // signed-in user's information
+                                startActivity(new Intent(LoginActivity.this,
+                                        LogoutScreen.class));
                             } else {
-                                // If sign in fails, display a message to the user.
-                                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                // If sign in fails,
+                                // display a message to the user.
+                                Toast.makeText(LoginActivity.this,
+                                        "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
                                 numberOfTries++;
                                 sendToBan();
@@ -250,17 +298,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     // Checks email against a valid email regex
-    private boolean isEmailValid(String email) {
+    private boolean isEmailValid(final String email) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
         return matcher.find();
     }
 
-    private boolean isPasswordValid(String password) {
+    private boolean isPasswordValid(final String password) {
         return password.length() > 4;
     }
 
     /**
      * Shows the progress UI and hides the login form.
+     * @param show boolean for showing things
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
@@ -268,29 +317,58 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // for very easy animations. If available, use these APIs to fade-in
         // the progress spinner.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+            int shortAnimTime = getResources().
+                    getInteger(android.R.integer.config_shortAnimTime);
 
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-                }
-            });
+            if (show) {
+                mLoginFormView.setVisibility(View.GONE);
+            } else {
+                mLoginFormView.setVisibility(View.VISIBLE);
+            }
+            if (show) {
+                mLoginFormView.animate().setDuration(shortAnimTime).alpha(
+                        0).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(final Animator animation) {
+                        mLoginFormView.setVisibility(View.GONE);
+                    }
+                });
+            } else {
+                mLoginFormView.animate().setDuration(shortAnimTime).alpha(
+                        1).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(final Animator animation) {
+                        mLoginFormView.setVisibility(View.VISIBLE);
+                    }
+                });
+            }
 
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mProgressView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-                }
-            });
+            if (show) {
+                mProgressView.setVisibility(View.VISIBLE);
+            } else {
+                mProgressView.setVisibility(View.GONE);
+            }
+            if (show) {
+                mProgressView.animate().setDuration(shortAnimTime).alpha(
+                        1).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        mProgressView.setVisibility(View.VISIBLE);
+                    }
+                });
+            } else {
+                mProgressView.animate().setDuration(shortAnimTime).alpha(
+                        0).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(final Animator animation) {
+                        mProgressView.setVisibility(View.GONE);
+                    }
+                });
+            }
 
-            Button cancelButton = (Button)findViewById(R.id.cancel_button);
+            Button cancelButton = (Button) findViewById(R.id.cancel_button);
             cancelButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
+                public void onClick(final View view) {
                     cancelLogin();
                 }
             });
@@ -298,8 +376,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // The ViewPropertyAnimator APIs are not available, so simply show
             // and hide the relevant UI components.
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            if (show) {
+                mProgressView.setVisibility(View.VISIBLE);
+            } else {
+                mProgressView.setVisibility(View.GONE);
+            }
+            if (show) {
+                mLoginFormView.setVisibility(View.GONE);
+            } else {
+                mLoginFormView.setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -310,20 +396,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void sendToBan() {
         if (numberOfTries == 3) {
-            startActivity(new Intent(LoginActivity.this, Banned_Unbanned.class));
+            startActivity(new Intent(LoginActivity.this, BannedUnbanned.class));
         }
     }
 
     @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+    public Loader<Cursor> onCreateLoader(final int i, final Bundle bundle) {
         return new CursorLoader(this,
                 // Retrieve data rows for the device user's 'profile' contact.
                 Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
                         ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
 
                 // Select only email addresses.
-                ContactsContract.Contacts.Data.MIMETYPE +
-                        " = ?", new String[]{ContactsContract.CommonDataKinds.Email
+                ContactsContract.Contacts.Data.MIMETYPE
+                        + " = ?", new String[]{ContactsContract.CommonDataKinds.Email
                 .CONTENT_ITEM_TYPE},
 
                 // Show primary email addresses first. Note that there won't be
@@ -348,23 +434,34 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     }
 
-    private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
-        //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
+    private void addEmailsToAutoComplete(final List<String> emailAddressCollection) {
+        //Create adapter to tell the AutoCompleteTextView
+        // what to show in its dropdown list.
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(LoginActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
+                        android.R.layout.simple_dropdown_item_1line,
+                        emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
     }
 
 
     private interface ProfileQuery {
+        /**
+         * The Projection.
+         */
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
                 ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
         };
 
+        /**
+         * The constant ADDRESS.
+         */
         int ADDRESS = 0;
+        /**
+         * The constant IS_PRIMARY.
+         */
         int IS_PRIMARY = 1;
     }
 }
