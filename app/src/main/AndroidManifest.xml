@@ -10,13 +10,9 @@
 
     <application
         android:allowBackup="true"
-<<<<<<< HEAD
-=======
         android:fullBackupContent="true"
->>>>>>> origin/will
         android:icon="@mipmap/main_logo"
         android:label="Where&apos;s My Stuff?"
-        android:roundIcon="@mipmap/main_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -33,11 +29,7 @@
             android:label="@string/title_activity_registration1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-<<<<<<< HEAD
-            android:name="com.example.RB.rebasejumpers.Logout_Screen"
-=======
             android:name="com.example.RB.rebasejumpers.LogoutScreen"
->>>>>>> origin/will
             android:label="@string/title_activity_logout__screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -49,13 +41,9 @@
             android:label="New Item"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-<<<<<<< HEAD
-            android:name="com.example.RB.rebasejumpers.Banned_Unbanned"
-=======
             android:name="com.example.RB.rebasejumpers.BannedUnbanned"
->>>>>>> origin/will
             android:label="@string/title_activity_banned__unbanned"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

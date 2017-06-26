@@ -34,7 +34,7 @@ public class ItemView extends AppCompatActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
-        // Firebase
+        //Firebase
         FirebaseDatabase mDatabase;
         DatabaseReference mReference;
 

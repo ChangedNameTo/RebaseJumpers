@@ -23,20 +23,9 @@ public class NewItemActivity extends AppCompatActivity {
     private EditText mItemName;
 
     /**
-     * The M auth.
-     */
-
-    // Firebase
-    private FirebaseAuth mAuth;
-    /**
-     * The M user.
-     */
-    private FirebaseUser mUser;
-
-    /**
      * The M reference.
      */
-    private DatabaseReference mReference = FirebaseDatabase
+    private final DatabaseReference mReference = FirebaseDatabase
             .getInstance().getReference();
 
     @Override
@@ -59,8 +48,14 @@ public class NewItemActivity extends AppCompatActivity {
      * Puts a new item in the firebase db.
      */
     private void newItem() {
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
+        /*
+      The M auth.
+     */
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        /*
+      The M user.
+     */
+        FirebaseUser mUser = mAuth.getCurrentUser();
 
         String name = null;
         if (mUser != null) {

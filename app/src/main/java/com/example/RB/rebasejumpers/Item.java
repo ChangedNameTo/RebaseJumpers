@@ -1,16 +1,12 @@
 package com.example.RB.rebasejumpers;
 
-/**
- * Created by andrey on 6/21/17.
- */
 
-public class Item {
-    private String itemName;
-    private String name;
+class Item {
+    private final String itemName;
 
-    public Item(String itemName, String name) {
+    Item(String itemName, String name) {
         this.itemName = itemName;
-        this.name = name;
+        String name1 = name;
     }
 
     public String getName() {
@@ -20,11 +16,11 @@ public class Item {
         return itemName;
     }
 
-    public String getEmail() {
+    /*public String getEmail() {
         return name;
-    }
+    }*/
 
-    public void setName(String name) {
+    /*public void setName(String name) {
         this.name = name;
-    }
+    }*/
 }

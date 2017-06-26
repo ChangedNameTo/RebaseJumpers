@@ -10,14 +10,14 @@
         android:id="@+id/list_view"
         android:layout_width="fill_parent"
         android:layout_height="504dp"
-        android:visibility="visible"></ListView>
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/new_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/list_view"
-        android:text="New Item"
+        android:text="@string/newItem"
         android:visibility="visible" />
 
 </LinearLayout>

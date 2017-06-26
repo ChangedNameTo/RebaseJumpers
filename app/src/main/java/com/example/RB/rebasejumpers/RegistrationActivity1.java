@@ -57,7 +57,7 @@ public class RegistrationActivity1
     /**
      * The M auth.
      */
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -217,15 +217,15 @@ public class RegistrationActivity1
         /**
          * The Email.
          */
-        public String email;
+        String email;
         /**
          * The Username.
          */
-        public String username;
+        String username;
         /**
          * The Password.
          */
-        public String password;
+        String password;
 
         /**
          * Instantiates a new User.
@@ -255,9 +255,6 @@ public class RegistrationActivity1
     }
 
     private boolean mayRequestContacts() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
-        }
         if (checkSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
             return true;
         }

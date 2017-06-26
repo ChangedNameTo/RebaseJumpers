@@ -1,22 +1,32 @@
 <resources>
-    <string name="app_name">MaddyLogin</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="hello_round">Hello Round World!</string>
-    <string name="hello_square">Hello Square World!</string>
     <string name="title_activity_registration1">RegistrationActivity1</string>
     <string name="title_activity_logout__screen">Logout_Screen</string>
     <string name="title_activity_banned__unbanned">Banned_Unbanned</string>
+    <string name="ban">I WANT TO BE UNBANNED</string>
+    <string name="warning">You have been banned from your account.</string>
+    <string name="newItem">New Item</string>
+    <string name="cancelLogin">Cancel Login</string>
+    <string name="password">Password</string>
+    <string name="register">REGISTER</string>
+    <string name="forgotPassword">FORGOT PASSWORD</string>
+    <string name="bannedPage">BANNED PAGE</string>
+    <string name="itemList">Item List</string>
+    <string name="logout">LOGOUT</string>
+    <string name="registerNewUser">REGISTER NEW USER</string>
+    <string name="newEmail">Create New Email: </string>
+    <string name="newPassword">Create New Password: (these are stored plain text, do not use a real one):</string>
+    <string name="header">Header</string>
+    <string name="createNewItem">Create New Item</string>
+    <string name="missingItem">What item is missing?</string>
+    <string name="submitItem">SUBMIT ITEM</string>
 </resources>

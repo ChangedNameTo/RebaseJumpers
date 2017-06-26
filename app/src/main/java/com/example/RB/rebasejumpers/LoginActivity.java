@@ -53,10 +53,6 @@ public class LoginActivity
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-<<<<<<< HEAD:app/src/main/java/com/example/RB/rebasejumpers/LoginActivity.java
-    // Email regex
-    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-=======
     /**
      * The constant VALID_EMAIL_ADDRESS_REGEX.
      */
@@ -64,7 +60,6 @@ public class LoginActivity
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
                     Pattern.CASE_INSENSITIVE);
->>>>>>> origin/will:app/src/main/java/com/example/RB/rebasejumpers/LoginActivity.java
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -181,9 +176,6 @@ public class LoginActivity
     }
 
     private boolean mayRequestContacts() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
-        }
         if (checkSelfPermission(READ_CONTACTS)
                 == PackageManager.PERMISSION_GRANTED) {
             return true;
@@ -269,7 +261,7 @@ public class LoginActivity
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
+            showProgress();
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this,
                             new OnCompleteListener<AuthResult>() {
@@ -309,84 +301,40 @@ public class LoginActivity
 
     /**
      * Shows the progress UI and hides the login form.
-     * @param show boolean for showing things
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    private void showProgress(final boolean show) {
+    private void showProgress() {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
         // the progress spinner.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            int shortAnimTime = getResources().
-                    getInteger(android.R.integer.config_shortAnimTime);
+        int shortAnimTime = getResources().
+                getInteger(android.R.integer.config_shortAnimTime);
 
-            if (show) {
+        mLoginFormView.setVisibility(View.GONE);
+        mLoginFormView.animate().setDuration(shortAnimTime).alpha(
+                0).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(final Animator animation) {
                 mLoginFormView.setVisibility(View.GONE);
-            } else {
-                mLoginFormView.setVisibility(View.VISIBLE);
             }
-            if (show) {
-                mLoginFormView.animate().setDuration(shortAnimTime).alpha(
-                        0).setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(final Animator animation) {
-                        mLoginFormView.setVisibility(View.GONE);
-                    }
-                });
-            } else {
-                mLoginFormView.animate().setDuration(shortAnimTime).alpha(
-                        1).setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(final Animator animation) {
-                        mLoginFormView.setVisibility(View.VISIBLE);
-                    }
-                });
-            }
+        });
 
-            if (show) {
+        mProgressView.setVisibility(View.VISIBLE);
+        mProgressView.animate().setDuration(shortAnimTime).alpha(
+                1).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
                 mProgressView.setVisibility(View.VISIBLE);
-            } else {
-                mProgressView.setVisibility(View.GONE);
             }
-            if (show) {
-                mProgressView.animate().setDuration(shortAnimTime).alpha(
-                        1).setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        mProgressView.setVisibility(View.VISIBLE);
-                    }
-                });
-            } else {
-                mProgressView.animate().setDuration(shortAnimTime).alpha(
-                        0).setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(final Animator animation) {
-                        mProgressView.setVisibility(View.GONE);
-                    }
-                });
-            }
+        });
 
-            Button cancelButton = (Button) findViewById(R.id.cancel_button);
-            cancelButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(final View view) {
-                    cancelLogin();
-                }
-            });
+        Button cancelButton = (Button) findViewById(R.id.cancel_button);
+        cancelButton.setOnClickListener(new OnClickListener() {
+            public void onClick(final View view) {
+                cancelLogin();
+            }
+        });
 
-        } else {
-            // The ViewPropertyAnimator APIs are not available, so simply show
-            // and hide the relevant UI components.
-            if (show) {
-                mProgressView.setVisibility(View.VISIBLE);
-            } else {
-                mProgressView.setVisibility(View.GONE);
-            }
-            if (show) {
-                mLoginFormView.setVisibility(View.GONE);
-            } else {
-                mLoginFormView.setVisibility(View.VISIBLE);
-            }
-        }
     }
 
     private void cancelLogin() {

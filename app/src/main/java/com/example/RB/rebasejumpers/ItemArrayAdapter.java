@@ -9,18 +9,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by andrey on 6/21/17.
- */
 
-public class ItemArrayAdapter extends BaseAdapter {
+class ItemArrayAdapter extends BaseAdapter {
 
-    Context context;
-    ArrayList<Item> list;
+    private final ArrayList<Item> list;
     private static LayoutInflater inflater = null;
 
-    public ItemArrayAdapter(Context context, ArrayList<Item> list) {
-        this.context = context;
+    ItemArrayAdapter(Context context, ArrayList<Item> list) {
+        Context context1 = context;
         this.list = list;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -44,7 +40,7 @@ public class ItemArrayAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (vi == null) {
-            vi = inflater.inflate(R.layout.list_item, null);
+            vi = inflater.inflate(R.layout.list_item, parent, false);
         }
         TextView text = (TextView) vi.findViewById(R.id.list_item);
         text.setText(list.get(position).getName());

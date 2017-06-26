@@ -4,7 +4,6 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/registration_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,7 +15,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="58dp"
-            android:text="Create New Item" />
+            android:text="@string/createNewItem" />
 
         <TextView
             android:id="@+id/textView4"
@@ -26,7 +25,7 @@
             android:layout_below="@+id/textView2"
             android:layout_marginTop="26dp"
             android:labelFor="@+id/item_name"
-            android:text="What item is missing?" />
+            android:text="@string/missingItem" />
 
         <EditText
             android:id="@+id/item_name"
@@ -45,6 +44,6 @@
             android:layout_alignStart="@+id/item_name"
             android:layout_below="@+id/item_name"
             android:layout_marginTop="25dp"
-            android:text="SUBMIT ITEM" />
+            android:text="@string/submitItem" />
     </RelativeLayout>
 </LinearLayout>

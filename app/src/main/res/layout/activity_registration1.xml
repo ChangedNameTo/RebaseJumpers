@@ -7,7 +7,6 @@
     tools:context="com.example.RB.rebasejumpers.RegistrationActivity1">
 
     <RelativeLayout
-        android:id="@+id/registration_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="58dp"
-            android:text="REGISTER NEW USER" />
+            android:text="@string/registerNewUser" />
 
         <TextView
             android:id="@+id/textView3"
@@ -29,7 +28,7 @@
             android:layout_below="@+id/textView2"
             android:layout_marginTop="18dp"
             android:labelFor="@+id/user_email_string"
-            android:text="Create New Email:" />
+            android:text="@string/newEmail" />
 
         <AutoCompleteTextView
             android:id="@+id/user_email_string"
@@ -49,8 +48,7 @@
             android:layout_below="@+id/user_email_string"
             android:layout_marginTop="26dp"
             android:labelFor="@+id/password_string"
-            android:text="Create New Password
-            (these are stored plain text, do not use a real one):" />
+            android:text="@string/newPassword" />
 
         <EditText
             android:id="@+id/password_string"
@@ -69,7 +67,7 @@
             android:layout_alignStart="@+id/password_string"
             android:layout_below="@+id/password_string"
             android:layout_marginTop="25dp"
-            android:text="REGISTER" />
+            android:text="@string/register" />
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
