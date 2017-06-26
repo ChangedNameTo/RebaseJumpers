@@ -9,24 +9,26 @@ import android.widget.Button;
 /**
  * The type Logout screen.
  */
-public class Logout_Screen extends AppCompatActivity {
+public class LogoutScreen extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout__screen);
 
         Button logoutButton = (Button) findViewById(R.id.logout_button);
         logoutButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(Logout_Screen.this, LoginActivity.class));
+            public void onClick(final View view) {
+                startActivity(
+                        new Intent(LogoutScreen.this, LoginActivity.class));
             }
         });
 
         Button itemListButton = (Button) findViewById(R.id.item_list_button);
         itemListButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(Logout_Screen.this, ItemView.class));
+            public void onClick(final View view) {
+                startActivity(
+                        new Intent(LogoutScreen.this, ItemView.class));
             }
         });
     }

@@ -10,34 +10,31 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by andrey on 6/21/17.
+ * The type Item array adapter.
  */
 public class ItemArrayAdapter extends BaseAdapter {
 
-    /**
-     * The Context.
-     */
-    private Context context;
     /**
      * The List.
      */
     private ArrayList<Item> list;
 
     /**
-     * The LayoutInflater
+     * The LayoutInflater.
      */
     private static LayoutInflater inflater = null;
 
     /**
      * Instantiates a new Item array adapter.
      *
-     * @param context the context
-     * @param list    the list
+     * @param contextParam the context
+     * @param listParam    the list
      */
-    public ItemArrayAdapter(Context context, ArrayList<Item> list) {
-        this.context = context;
-        this.list = list;
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public ItemArrayAdapter(final Context contextParam,
+                            final ArrayList<Item> listParam) {
+        this.list = listParam;
+        inflater = (LayoutInflater)
+                contextParam.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -46,17 +43,19 @@ public class ItemArrayAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public Object getItem(final int position) {
         return list.get(position);
     }
 
     @Override
-    public long getItemId(int position) {
+    public long getItemId(final int position) {
         return position;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position,
+                        final View convertView,
+                        final ViewGroup parent) {
         View vi = convertView;
         if (vi == null) {
             vi = inflater.inflate(R.layout.list_item, null);

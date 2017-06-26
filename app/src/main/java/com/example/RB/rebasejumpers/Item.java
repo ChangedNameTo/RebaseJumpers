@@ -1,7 +1,7 @@
 package com.example.RB.rebasejumpers;
 
 /**
- * Created by andrey on 6/21/17.
+ * The type Item.
  */
 public class Item {
 

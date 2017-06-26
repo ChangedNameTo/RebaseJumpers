@@ -1,6 +1,3 @@
-/**
-  Idk what this is supposed to contain tbh.
- */
 package com.example.RB.rebasejumpers;
 
 import android.content.Intent;
@@ -20,7 +17,7 @@ public class BannedUnbanned extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banned__unbanned);
 
-        Button unbannedButton = (Button) findViewById(R.id.unbanButton);
+        Button unbannedButton = (Button) findViewById(R.id.unBanButton);
         unbannedButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(final View view) {
                 startActivity(new Intent(BannedUnbanned.this,

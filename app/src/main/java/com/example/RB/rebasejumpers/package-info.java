@@ -1,5 +1,5 @@
 /**
- * Pretty much the whole project
+ * Pretty much the whole project.
  *
  * @since 1.0
  * @author will

@@ -30,7 +30,7 @@
             android:label="@string/title_activity_registration1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.RB.rebasejumpers.Logout_Screen"
+            android:name="com.example.RB.rebasejumpers.LogoutScreen"
             android:label="@string/title_activity_logout__screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
