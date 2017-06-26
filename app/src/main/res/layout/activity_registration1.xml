@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.maddy.maddylogin.RegistrationActivity1">
+    tools:context="com.example.RB.rebasejumpers.RegistrationActivity1">
 
     <RelativeLayout
         android:id="@+id/registration_form"

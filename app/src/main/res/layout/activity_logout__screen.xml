@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.maddy.maddylogin.Logout_Screen">
+    tools:context="com.example.RB.rebasejumpers.Logout_Screen">
 
     <RelativeLayout
         android:layout_width="match_parent"
