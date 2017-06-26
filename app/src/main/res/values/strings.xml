@@ -18,4 +18,5 @@
     <string name="hello_square">Hello Square World!</string>
     <string name="title_activity_registration1">RegistrationActivity1</string>
     <string name="title_activity_logout__screen">Logout_Screen</string>
+    <string name="title_activity_banned__unbanned">Banned_Unbanned</string>
 </resources>

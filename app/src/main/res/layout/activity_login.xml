@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.maddy.maddylogin.LoginActivity"
+    tools:context="com.example.RB.rebasejumpers.LoginActivity"
     android:orientation="vertical">
 
     <!-- Login progress -->
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:elevation="6dp"
                 android:text="Cancel Login" />
         </LinearLayout>
@@ -63,8 +63,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -81,8 +80,7 @@
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -105,9 +103,16 @@
             <Button
                 android:id="@+id/forgot_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Forgot Password" />
+
+            <Button
+                android:id="@+id/goToBanPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Banned Page" />
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
