@@ -41,6 +41,9 @@ import java.util.regex.Matcher;
 import static android.Manifest.permission.READ_CONTACTS;
 import static com.example.RB.rebasejumpers.LoginActivity.VALID_EMAIL_ADDRESS_REGEX;
 
+/**
+ * The type Registration activity 1.
+ */
 public class RegistrationActivity1 extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     // Id to identify READ_CONTACTS permission request
     private static final int REQUEST_READ_CONTACTS = 0;
@@ -207,13 +210,35 @@ public class RegistrationActivity1 extends AppCompatActivity implements LoaderMa
         mEmailView.setAdapter(adapter);
     }
 
+    /**
+     * The type User.
+     */
     public static class User {
+        /**
+         * The Email.
+         */
         public String email;
+        /**
+         * The Username.
+         */
         public String username;
+        /**
+         * The Password.
+         */
         public String password;
 
+        /**
+         * Instantiates a new User.
+         */
         public User() {}
 
+        /**
+         * Instantiates a new User.
+         *
+         * @param email    the email
+         * @param username the username
+         * @param password the password
+         */
         public User(String email, String username, String password) {
             this.email = email;
             this.username = username;
@@ -252,12 +277,21 @@ public class RegistrationActivity1 extends AppCompatActivity implements LoaderMa
     }
 
     private interface ProfileQuery {
+        /**
+         * The Projection.
+         */
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
                 ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
         };
 
+        /**
+         * The constant ADDRESS.
+         */
         int ADDRESS = 0;
+        /**
+         * The constant IS_PRIMARY.
+         */
         int IS_PRIMARY = 1;
     }
 }

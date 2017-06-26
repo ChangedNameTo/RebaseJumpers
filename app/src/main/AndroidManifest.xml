@@ -10,6 +10,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/main_logo"
         android:label="Where&apos;s My Stuff?"
         android:roundIcon="@mipmap/main_logo"
@@ -41,7 +42,7 @@
             android:label="New Item"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.RB.rebasejumpers.Banned_Unbanned"
+            android:name="com.example.RB.rebasejumpers.BannedUnbanned"
             android:label="@string/title_activity_banned__unbanned"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

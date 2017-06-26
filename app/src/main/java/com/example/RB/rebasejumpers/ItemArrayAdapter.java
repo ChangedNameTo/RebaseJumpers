@@ -12,13 +12,28 @@ import java.util.ArrayList;
 /**
  * Created by andrey on 6/21/17.
  */
-
 public class ItemArrayAdapter extends BaseAdapter {
 
-    Context context;
-    ArrayList<Item> list;
+    /**
+     * The Context.
+     */
+    private Context context;
+    /**
+     * The List.
+     */
+    private ArrayList<Item> list;
+
+    /**
+     * The LayoutInflater
+     */
     private static LayoutInflater inflater = null;
 
+    /**
+     * Instantiates a new Item array adapter.
+     *
+     * @param context the context
+     * @param list    the list
+     */
     public ItemArrayAdapter(Context context, ArrayList<Item> list) {
         this.context = context;
         this.list = list;

@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * The type Logout screen.
+ */
 public class Logout_Screen extends AppCompatActivity {
 
     @Override

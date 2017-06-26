@@ -20,7 +20,6 @@ import java.util.ArrayList;
 /**
  * Created by andrey on 6/21/17.
  */
-
 public class ItemView extends AppCompatActivity {
 
     private ListView activityItemView;

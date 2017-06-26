@@ -15,7 +15,6 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * Created by will on 6/23/17.
  */
-
 public class NewItemActivity extends AppCompatActivity {
 
     // UI references

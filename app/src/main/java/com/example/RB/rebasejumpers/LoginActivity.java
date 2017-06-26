@@ -45,7 +45,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-    // Email regex
+    /**
+     * The constant VALID_EMAIL_ADDRESS_REGEX.
+     */
+// Email regex
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     // UI references.
@@ -103,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Button bannedButton = (Button) findViewById(R.id.goToBanPage);
         bannedButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, Banned_Unbanned.class));
+                startActivity(new Intent(LoginActivity.this, BannedUnbanned.class));
             }
         });
 
@@ -310,7 +313,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void sendToBan() {
         if (numberOfTries == 3) {
-            startActivity(new Intent(LoginActivity.this, Banned_Unbanned.class));
+            startActivity(new Intent(LoginActivity.this, BannedUnbanned.class));
         }
     }
 
@@ -359,12 +362,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
     private interface ProfileQuery {
+        /**
+         * The Projection.
+         */
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
                 ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
         };
 
+        /**
+         * The constant ADDRESS.
+         */
         int ADDRESS = 0;
+        /**
+         * The constant IS_PRIMARY.
+         */
         int IS_PRIMARY = 1;
     }
 }
