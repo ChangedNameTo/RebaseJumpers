@@ -1,4 +1,4 @@
-package com.example.maddy.maddylogin;
+package com.example.RB.rebasejumpers;
 
 import org.junit.Test;
 

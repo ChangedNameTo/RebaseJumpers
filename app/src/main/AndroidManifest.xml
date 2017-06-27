@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.maddy.maddylogin">
+    package="com.example.RB.rebasejumpers">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -10,14 +10,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/main_logo"
+        android:label="Where&apos;s My Stuff?"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name">
+            android:name="com.example.RB.rebasejumpers.LoginActivity"
+            android:label="Where&apos;s My Stuff?">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,17 +25,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegistrationActivity1"
+            android:name="com.example.RB.rebasejumpers.RegistrationActivity1"
             android:label="@string/title_activity_registration1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Logout_Screen"
+            android:name="com.example.RB.rebasejumpers.LogoutScreen"
             android:label="@string/title_activity_logout__screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".ItemView"
+            android:name="com.example.RB.rebasejumpers.ItemView"
             android:label="Item List"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.RB.rebasejumpers.NewItemActivity"
+            android:label="New Item"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.RB.rebasejumpers.BannedUnbanned"
+            android:label="@string/title_activity_banned__unbanned"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
