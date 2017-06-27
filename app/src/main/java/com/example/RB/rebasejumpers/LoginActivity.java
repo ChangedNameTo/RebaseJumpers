@@ -93,7 +93,7 @@ public class LoginActivity
             public boolean onEditorAction(
                     final TextView textView,
                     final int id, final KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
+                if ((id == R.id.login) || (id == EditorInfo.IME_NULL)) {
                     attemptLogin();
                     return true;
                 }
@@ -213,9 +213,9 @@ public class LoginActivity
                                            @NonNull final String[] permissions,
                                            @NonNull final int[] grantResults) {
         if (requestCode == REQUEST_READ_CONTACTS) {
-            if (grantResults.length == 1
-                    && grantResults[0]
-                    == PackageManager.PERMISSION_GRANTED) {
+            if ((grantResults.length == 1)
+                    && (grantResults[0]
+                    == PackageManager.PERMISSION_GRANTED)) {
                 populateAutoComplete();
             }
         }
@@ -295,12 +295,12 @@ public class LoginActivity
     }
 
     // Checks email against a valid email regex
-    private boolean isEmailValid(final String email) {
+    private boolean isEmailValid(final CharSequence email) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
         return matcher.find();
     }
 
-    private boolean isPasswordValid(final String password) {
+    private boolean isPasswordValid(final CharSequence password) {
         return password.length() > 4;
     }
 
@@ -344,7 +344,6 @@ public class LoginActivity
     }
 
     private void cancelLogin() {
-        mAuth = null;
         startActivity(new Intent(LoginActivity.this, LoginActivity.class));
     }
 

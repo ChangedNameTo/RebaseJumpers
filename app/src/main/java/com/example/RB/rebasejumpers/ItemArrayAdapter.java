@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,13 +15,7 @@ import java.util.List;
  */
 class ItemArrayAdapter extends BaseAdapter {
 
-    /**
-     * inflater.
-     */
-    private static LayoutInflater inflater = null;
-    /**
-     * list.
-     */
+    private LayoutInflater inflater = null;
     private final List<Item> list;
 
     /**
@@ -31,8 +24,7 @@ class ItemArrayAdapter extends BaseAdapter {
      * @param context the context
      * @param list    the list
      */
-    ItemArrayAdapter(Context context, ArrayList<Item> list) {
-        Context context1 = context;
+    ItemArrayAdapter(Context context, List<Item> list) {
         this.list = list;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -59,7 +51,8 @@ class ItemArrayAdapter extends BaseAdapter {
             vi = inflater.inflate(R.layout.list_item, parent, false);
         }
         TextView text = (TextView) vi.findViewById(R.id.list_item);
-        text.setText(list.get(position).getName());
+        Item item = list.get(position);
+        text.setText(item.getName());
         return vi;
     }
 }

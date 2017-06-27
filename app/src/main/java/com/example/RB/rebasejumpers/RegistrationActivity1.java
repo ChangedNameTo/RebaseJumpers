@@ -77,7 +77,7 @@ public class RegistrationActivity1
                     final TextView textView,
                     final int id,
                     final KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
+                if ((id == R.id.login) || (id == EditorInfo.IME_NULL)) {
                     registerUser();
                     return true;
                 }
@@ -159,12 +159,12 @@ public class RegistrationActivity1
     }
 
     // Checks email against a valid email regex
-    private boolean isEmailValid(String email) {
+    private boolean isEmailValid(CharSequence email) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
         return matcher.find();
     }
 
-    private boolean isPasswordValid(String password) {
+    private boolean isPasswordValid(CharSequence password) {
         return password.length() > 4;
     }
 

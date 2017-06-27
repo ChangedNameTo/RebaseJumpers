@@ -7,6 +7,7 @@ android {
     defaultConfig {
         applicationId "com.example.maddy.maddylogin"
         minSdkVersion 25
+        //noinspection OldTargetApi
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -33,6 +34,7 @@ dependencies {
     compile 'com.android.support:design:25.3.1'
     compile 'com.google.firebase:firebase-auth:10.2.6'
     compile 'com.google.firebase:firebase-database:10.2.6'
+    //noinspection GradleDependency
     compile 'com.google.android.gms:play-services-auth:10.2.6'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
     testCompile 'junit:junit:4.12'

@@ -6,6 +6,7 @@ package com.example.RB.rebasejumpers;
  */
 class Item {
     private final String itemName;
+    private String name;
 
     /**
      * Instantiates a new Item.
@@ -15,7 +16,7 @@ class Item {
      */
     Item(String itemName, String name) {
         this.itemName = itemName;
-        String name1 = name;
+        this.name = name;
     }
 
     /**
@@ -23,18 +24,14 @@ class Item {
      *
      * @return the name
      */
-    public String getName() {
+    public CharSequence getName() {
         if(itemName==null) {
             return "System";
         }
         return itemName;
     }
 
-    /*public String getEmail() {
-        return name;
-    }*/
-
-    /*public void setName(String name) {
+    public void setName(String name) {
         this.name = name;
-    }*/
+    }
 }
