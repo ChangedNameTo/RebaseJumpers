@@ -19,6 +19,7 @@ public class BannedUnbanned extends AppCompatActivity {
 
         Button unbannedButton = (Button) findViewById(R.id.unBanButton);
         unbannedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 startActivity(new Intent(BannedUnbanned.this,
                         LoginActivity.class));

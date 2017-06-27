@@ -8,13 +8,29 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
+/**
+ * The type Item array adapter.
+ */
 class ItemArrayAdapter extends BaseAdapter {
 
-    private final ArrayList<Item> list;
+    /**
+     * inflater.
+     */
     private static LayoutInflater inflater = null;
+    /**
+     * list.
+     */
+    private final List<Item> list;
 
+    /**
+     * Instantiates a new Item array adapter.
+     *
+     * @param context the context
+     * @param list    the list
+     */
     ItemArrayAdapter(Context context, ArrayList<Item> list) {
         Context context1 = context;
         this.list = list;

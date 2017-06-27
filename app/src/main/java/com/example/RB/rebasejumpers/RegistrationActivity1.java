@@ -139,7 +139,7 @@ public class RegistrationActivity1
                     .addOnCompleteListener(this,
                             new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onComplete(final @NonNull Task<AuthResult> task) {
+                        public void onComplete(@NonNull final Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Log.d(TAG, "createUserWithEmail:success");
                                 startActivity(
@@ -190,6 +190,7 @@ public class RegistrationActivity1
 
     }
 
+    @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
         List<String> emails = new ArrayList<>();
         cursor.moveToFirst();

@@ -47,6 +47,7 @@ public class ItemView extends AppCompatActivity {
 
         Button newItemButton = (Button) findViewById(R.id.new_item);
         newItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 startActivity(new Intent(ItemView.this, NewItemActivity.class));
             }

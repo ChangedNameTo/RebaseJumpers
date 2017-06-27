@@ -9,8 +9,8 @@ import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * The type New item activity.
@@ -38,6 +38,7 @@ public class NewItemActivity extends AppCompatActivity {
         Button newItemButton = (Button)
                 findViewById(R.id.submit_new_item_buttom);
         newItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 newItem();
             }

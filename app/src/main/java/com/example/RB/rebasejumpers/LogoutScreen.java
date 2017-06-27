@@ -18,6 +18,7 @@ public class LogoutScreen extends AppCompatActivity {
 
         Button logoutButton = (Button) findViewById(R.id.logout_button);
         logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 startActivity(
                         new Intent(LogoutScreen.this, LoginActivity.class));
@@ -26,6 +27,7 @@ public class LogoutScreen extends AppCompatActivity {
 
         Button itemListButton = (Button) findViewById(R.id.item_list_button);
         itemListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 startActivity(
                         new Intent(LogoutScreen.this, ItemView.class));

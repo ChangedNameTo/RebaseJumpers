@@ -45,6 +45,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class LoginActivity
         extends AppCompatActivity
         implements LoaderCallbacks<Cursor> {
@@ -112,6 +113,7 @@ public class LoginActivity
 
         Button registerButton = (Button) findViewById(R.id.register);
         registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 startActivity(new Intent(LoginActivity.this,
                         RegistrationActivity1.class));
@@ -120,6 +122,7 @@ public class LoginActivity
 
         Button bannedButton = (Button) findViewById(R.id.goToBanPage);
         bannedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 startActivity(new Intent(LoginActivity.this,
                         BannedUnbanned.class));
@@ -130,6 +133,7 @@ public class LoginActivity
                 (Button) findViewById(R.id.forgot_password);
 
         forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 AlertDialog alertDialog =
                         new AlertDialog.Builder(LoginActivity.this).create();
@@ -140,7 +144,7 @@ public class LoginActivity
                                         new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(
-                                            final @NonNull Task<Void> task) {
+                                            @NonNull final Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             Toast.makeText(
                                                     LoginActivity.this,
@@ -152,6 +156,7 @@ public class LoginActivity
 
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                         new DialogInterface.OnClickListener() {
+                            @Override
                             public void onClick(
                                     final DialogInterface dialog,
                                     final int which) {
@@ -205,8 +210,8 @@ public class LoginActivity
      */
     @Override
     public void onRequestPermissionsResult(final int requestCode,
-                                           final @NonNull String[] permissions,
-                                           final @NonNull int[] grantResults) {
+                                           @NonNull final String[] permissions,
+                                           @NonNull final int[] grantResults) {
         if (requestCode == REQUEST_READ_CONTACTS) {
             if (grantResults.length == 1
                     && grantResults[0]
@@ -267,7 +272,7 @@ public class LoginActivity
                             new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(
-                                final @NonNull Task<AuthResult> task) {
+                                @NonNull final Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success,
                                 // update UI with the
@@ -330,6 +335,7 @@ public class LoginActivity
 
         Button cancelButton = (Button) findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(new OnClickListener() {
+            @Override
             public void onClick(final View view) {
                 cancelLogin();
             }
