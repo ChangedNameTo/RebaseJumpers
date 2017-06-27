@@ -55,11 +55,11 @@ public class ItemView extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     ArrayList<Item> itemList = new ArrayList<Item>();
-
-                    String name = postSnapshot.child("name").getValue().toString();
-                    String email = postSnapshot.child("email").getValue().toString();
-                    itemList.add(new Item(name, email));
-
+                    for(DataSnapshot a: postSnapshot.getChildren()) {
+                        String name = a.child("name").getValue().toString();
+                        String email = a.child("email").getValue().toString();
+                        itemList.add(new Item(name, email));
+                    }
                     activityItemView = (ListView) findViewById(R.id.list_view);
                     activityItemView.setAdapter(new ItemArrayAdapter(ItemView.this, itemList));
                 }
