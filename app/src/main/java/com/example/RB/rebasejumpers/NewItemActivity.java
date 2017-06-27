@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * The type New item activity.
  */
+@SuppressWarnings("ALL")
 public class NewItemActivity extends AppCompatActivity {
 
     /**

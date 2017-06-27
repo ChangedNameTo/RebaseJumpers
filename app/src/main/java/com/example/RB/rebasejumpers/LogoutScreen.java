@@ -9,6 +9,7 @@ import android.widget.Button;
 /**
  * The type Logout screen.
  */
+@SuppressWarnings("ALL")
 public class LogoutScreen extends AppCompatActivity {
 
     @Override

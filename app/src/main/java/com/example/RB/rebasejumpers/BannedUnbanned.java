@@ -10,6 +10,7 @@ import android.widget.Button;
 /**
  * The type Banned unbanned.
  */
+@SuppressWarnings("ALL")
 public class BannedUnbanned extends AppCompatActivity {
 
     @Override

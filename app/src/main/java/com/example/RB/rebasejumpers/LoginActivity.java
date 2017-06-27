@@ -180,6 +180,7 @@ public class LoginActivity
         getLoaderManager().initLoader(0, null, this);
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     private boolean mayRequestContacts() {
         if (checkSelfPermission(READ_CONTACTS)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -354,15 +355,18 @@ public class LoginActivity
     }
 
     @Override
+    @TargetApi(Build.VERSION_CODES.M)
     public Loader<Cursor> onCreateLoader(final int i, final Bundle bundle) {
         return new CursorLoader(this,
                 // Retrieve data rows for the device user's 'profile' contact.
                 Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
-                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
+                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY),
+                ProfileQuery.PROJECTION,
 
                 // Select only email addresses.
                 ContactsContract.Contacts.Data.MIMETYPE
-                        + " = ?", new String[]{ContactsContract.CommonDataKinds.Email
+                        + " = ?",
+                new String[]{ContactsContract.CommonDataKinds.Email
                 .CONTENT_ITEM_TYPE},
 
                 // Show primary email addresses first. Note that there won't be
@@ -387,7 +391,8 @@ public class LoginActivity
 
     }
 
-    private void addEmailsToAutoComplete(final List<String> emailAddressCollection) {
+    private void addEmailsToAutoComplete(final List<String>
+                                                 emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView
         // what to show in its dropdown list.
         ArrayAdapter<String> adapter =

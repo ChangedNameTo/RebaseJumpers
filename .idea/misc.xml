@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
-    <entry_points version="2.0" />
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.Item name" />
+      <entry_point TYPE="method" FQNAME="com.example.RB.rebasejumpers.Item void setName(java.lang.String name)" />
+      <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.LoginActivity.ProfileQuery IS_PRIMARY" />
+      <entry_point TYPE="method" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.User User(java.lang.String email, java.lang.String username, java.lang.String password)" />
+      <entry_point TYPE="method" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.User User()" />
+      <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.User password" />
+      <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.User username" />
+      <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.User email" />
+      <entry_point TYPE="class" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.User" />
+      <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.ProfileQuery IS_PRIMARY" />
+      <entry_point TYPE="class" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.ProfileQuery" />
+    </entry_points>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OPTION_INCLUDE_LIBS" value="false" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
