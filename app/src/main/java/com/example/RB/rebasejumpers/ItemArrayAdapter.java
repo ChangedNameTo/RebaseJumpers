@@ -7,37 +7,28 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
+
 
 /**
- * Created by andrey on 6/21/17.
+ * The type Item array adapter.
  */
-public class ItemArrayAdapter extends BaseAdapter {
+class ItemArrayAdapter extends BaseAdapter {
 
-    /**
-     * The Context.
-     */
-    private Context context;
-    /**
-     * The List.
-     */
-    private ArrayList<Item> list;
-
-    /**
-     * The LayoutInflater
-     */
-    private static LayoutInflater inflater = null;
+    private LayoutInflater inflater = null;
+    private final List<Item> list;
 
     /**
      * Instantiates a new Item array adapter.
      *
-     * @param context the context
-     * @param list    the list
+     * @param context      the context
+     * @param listParam    the list
      */
-    public ItemArrayAdapter(Context context, ArrayList<Item> list) {
-        this.context = context;
-        this.list = list;
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    ItemArrayAdapter(Context context, final List<Item> listParam) {
+        //noinspection AssignmentToCollectionOrArrayFieldFromParameter
+        this.list = listParam;
+        this.inflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -59,10 +50,11 @@ public class ItemArrayAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (vi == null) {
-            vi = inflater.inflate(R.layout.list_item, null);
+            vi = inflater.inflate(R.layout.list_item, parent, false);
         }
         TextView text = (TextView) vi.findViewById(R.id.list_item);
-        text.setText(list.get(position).getName());
+        Item item = list.get(position);
+        text.setText(item.getName());
         return vi;
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.RB.rebasejumpers.Logout_Screen">
+    tools:context="com.example.RB.rebasejumpers.LogoutScreen">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,14 +17,14 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="34dp"
-            android:text="Item List" />
+            android:text="@string/itemList" />
 
         <Button
             android:id="@+id/logout_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="69dp"
-            android:text="LOGOUT"
+            android:text="@string/logout"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />
     </RelativeLayout>

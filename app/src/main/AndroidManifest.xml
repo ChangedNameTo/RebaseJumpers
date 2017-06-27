@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.RB.rebasejumpers">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -13,9 +14,9 @@
         android:fullBackupContent="true"
         android:icon="@mipmap/main_logo"
         android:label="Where&apos;s My Stuff?"
-        android:roundIcon="@mipmap/main_logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="com.example.RB.rebasejumpers.LoginActivity"
             android:label="Where&apos;s My Stuff?">
@@ -30,7 +31,7 @@
             android:label="@string/title_activity_registration1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.RB.rebasejumpers.Logout_Screen"
+            android:name="com.example.RB.rebasejumpers.LogoutScreen"
             android:label="@string/title_activity_logout__screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -44,7 +45,7 @@
         <activity
             android:name="com.example.RB.rebasejumpers.BannedUnbanned"
             android:label="@string/title_activity_banned__unbanned"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

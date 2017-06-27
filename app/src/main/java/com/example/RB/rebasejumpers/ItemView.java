@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,32 +17,39 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 /**
- * Created by andrey on 6/21/17.
+ * The type Item view.
  */
+@SuppressWarnings("ALL")
 public class ItemView extends AppCompatActivity {
 
+    /**
+     * The activityItemView.
+     */
     private ListView activityItemView;
+    /**
+     * Error tag.
+     */
     private static final String TAG = "ItemView";
 
-    // Firebase
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mReference;
-    private FirebaseAuth mAuth;
 
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(final Bundle savedInstanceState) {
+        //Firebase
+        FirebaseDatabase mDatabase;
+        DatabaseReference mReference;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_view);
 
         // Initialize Authentication
         mDatabase = FirebaseDatabase.getInstance();
         mReference = mDatabase.getReference("items");
-        mAuth = FirebaseAuth.getInstance();
 
         Button newItemButton = (Button) findViewById(R.id.new_item);
         newItemButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
+            @Override
+            public void onClick(final View view) {
                 startActivity(new Intent(ItemView.this, NewItemActivity.class));
             }
         });
@@ -52,21 +58,24 @@ public class ItemView extends AppCompatActivity {
         mReference.orderByKey();
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(final DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    ArrayList<Item> itemList = new ArrayList<Item>();
+                    ArrayList<Item> itemList = new ArrayList<>();
 
-                    String name = postSnapshot.child("name").getValue().toString();
-                    String email = postSnapshot.child("email").getValue().toString();
+                    String name = postSnapshot.child(
+                            "name").getValue().toString();
+                    String email = postSnapshot.child(
+                            "email").getValue().toString();
                     itemList.add(new Item(name, email));
 
                     activityItemView = (ListView) findViewById(R.id.list_view);
-                    activityItemView.setAdapter(new ItemArrayAdapter(ItemView.this, itemList));
+                    activityItemView.setAdapter(
+                            new ItemArrayAdapter(ItemView.this, itemList));
                 }
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(final DatabaseError databaseError) {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
         });

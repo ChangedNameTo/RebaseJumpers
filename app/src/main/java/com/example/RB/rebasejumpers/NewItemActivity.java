@@ -13,43 +13,57 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
- * Created by will on 6/23/17.
+ * The type New item activity.
  */
+@SuppressWarnings("ALL")
 public class NewItemActivity extends AppCompatActivity {
 
-    // UI references
+    /**
+     * UI reference.
+     */
     private EditText mItemName;
 
-    // Database references
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mReference;
-    private FirebaseAuth mAuth;
-    private FirebaseUser mUser;
+    /**
+     * The M reference.
+     */
+    private final DatabaseReference mReference = FirebaseDatabase
+            .getInstance().getReference();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_item_creation);
 
-        // Initialize Authentication
-        mDatabase = FirebaseDatabase.getInstance();
-        mReference = mDatabase.getReference();
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
-
         mItemName = (EditText) findViewById(R.id.item_name);
 
-        Button newItemButton = (Button) findViewById(R.id.submit_new_item_buttom);
+        Button newItemButton = (Button)
+                findViewById(R.id.submit_new_item_buttom);
         newItemButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
+            @Override
+            public void onClick(final View view) {
                 newItem();
             }
         });
     }
 
+    /**
+     * Puts a new item in the firebase db.
+     */
     private void newItem() {
-        String name = mUser.getDisplayName();
-        if(name == null) {
+        /*
+      The M auth.
+     */
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        /*
+      The M user.
+     */
+        FirebaseUser mUser = mAuth.getCurrentUser();
+
+        String name = null;
+        if (mUser != null) {
+            name = mUser.getDisplayName();
+        }
+        if (name == null) {
             name = "System";
         }
         String itemName = mItemName.getText().toString();

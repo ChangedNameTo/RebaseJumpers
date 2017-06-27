@@ -1,28 +1,22 @@
 package com.example.RB.rebasejumpers;
 
-/**
- * Created by andrey on 6/21/17.
- */
-public class Item {
 
-    /**
-     * Stores item name.
-     */
-    private String itemName;
-    /**
-     * Stores name.
-     */
+/**
+ * The type Item.
+ */
+class Item {
+    private final String itemName;
     private String name;
 
     /**
      * Instantiates a new Item.
      *
-     * @param itemNameParam the item name
-     * @param nameParam     the name
+     * @param itemName the item name
+     * @param name     the name
      */
-    public Item(final String itemNameParam, final String nameParam) {
-        this.itemName = itemNameParam;
-        this.name = nameParam;
+    Item(String itemName, String name) {
+        this.itemName = itemName;
+        this.name = name;
     }
 
     /**
@@ -30,28 +24,14 @@ public class Item {
      *
      * @return the name
      */
-    public String getName() {
+    public CharSequence getName() {
         if (itemName == null) {
             return "System";
         }
         return itemName;
     }
 
-    /**
-     * Gets email.
-     *
-     * @return the email
-     */
-    public String getEmail() {
-        return name;
-    }
-
-    /**
-     * Sets name.
-     *
-     * @param nameParam the name
-     */
-    public void setName(final String nameParam) {
-        this.name = nameParam;
+    public void setName(String name) {
+        this.name = name;
     }
 }
