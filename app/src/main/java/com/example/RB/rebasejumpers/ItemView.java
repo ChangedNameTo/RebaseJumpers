@@ -19,6 +19,7 @@ import java.util.ArrayList;
 /**
  * The type Item view.
  */
+@SuppressWarnings("ALL")
 public class ItemView extends AppCompatActivity {
 
     /**

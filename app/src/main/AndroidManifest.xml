@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.RB.rebasejumpers">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -14,7 +15,8 @@
         android:icon="@mipmap/main_logo"
         android:label="Where&apos;s My Stuff?"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="com.example.RB.rebasejumpers.LoginActivity"
             android:label="Where&apos;s My Stuff?">

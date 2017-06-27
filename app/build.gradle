@@ -7,15 +7,14 @@ android {
     defaultConfig {
         applicationId "com.example.maddy.maddylogin"
         minSdkVersion 25
-        //noinspection OldTargetApi
-        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

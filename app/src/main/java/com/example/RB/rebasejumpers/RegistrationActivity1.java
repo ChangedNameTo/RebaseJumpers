@@ -41,6 +41,7 @@ import static com.example.RB.rebasejumpers.LoginActivity.VALID_EMAIL_ADDRESS_REG
 /**
  * The type Registration activity 1.
  */
+@SuppressWarnings("ALL")
 public class RegistrationActivity1
         extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -139,16 +140,21 @@ public class RegistrationActivity1
                     .addOnCompleteListener(this,
                             new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onComplete(@NonNull final Task<AuthResult> task) {
+                        public void onComplete(
+                                @NonNull final Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Log.d(TAG, "createUserWithEmail:success");
                                 startActivity(
                                         new Intent(RegistrationActivity1.this,
                                                 LogoutScreen.class));
                             } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(RegistrationActivity1.this, "Authentication failed.",
+                                // If sign in fails,
+                                // display a message to the user.
+                                Log.w(TAG,
+                                        "createUserWithEmail:failure",
+                                        task.getException());
+                                Toast.makeText(RegistrationActivity1.this,
+                                        "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -173,11 +179,13 @@ public class RegistrationActivity1
         return new CursorLoader(this,
                 // Retrieve data rows for the device user's 'profile' contact.
                 Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
-                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
+                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY),
+                ProfileQuery.PROJECTION,
 
                 // Select only email addresses.
-                ContactsContract.Contacts.Data.MIMETYPE +
-                        " = ?", new String[]{ContactsContract.CommonDataKinds.Email
+                ContactsContract.Contacts.Data.MIMETYPE
+                        + " = ?",
+                new String[]{ContactsContract.CommonDataKinds.Email
                 .CONTENT_ITEM_TYPE},
 
                 // Show primary email addresses first. Note that there won't be
@@ -203,10 +211,12 @@ public class RegistrationActivity1
     }
 
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
-        //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
+        //Create adapter to tell the AutoCompleteTextView
+        // what to show in its dropdown list.
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(RegistrationActivity1.this,
-                        android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
+                        android.R.layout.simple_dropdown_item_1line,
+                        emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
     }
@@ -231,7 +241,7 @@ public class RegistrationActivity1
         /**
          * Instantiates a new User.
          */
-        public User() {}
+        public User() { }
 
         /**
          * Instantiates a new User.
@@ -256,20 +266,26 @@ public class RegistrationActivity1
     }
 
     private boolean mayRequestContacts() {
-        if (checkSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(READ_CONTACTS)
+                == PackageManager.PERMISSION_GRANTED) {
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(mEmailView,
+                    R.string.permission_rationale,
+                    Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         @TargetApi(Build.VERSION_CODES.M)
                         public void onClick(View v) {
-                            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
+                            requestPermissions(
+                                    new String[]{READ_CONTACTS},
+                                    REQUEST_READ_CONTACTS);
                         }
                     });
         } else {
-            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
+            requestPermissions(new String[]{READ_CONTACTS},
+                    REQUEST_READ_CONTACTS);
         }
         return false;
     }

@@ -21,12 +21,14 @@ class ItemArrayAdapter extends BaseAdapter {
     /**
      * Instantiates a new Item array adapter.
      *
-     * @param context the context
-     * @param list    the list
+     * @param context      the context
+     * @param listParam    the list
      */
-    ItemArrayAdapter(Context context, List<Item> list) {
-        this.list = list;
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    ItemArrayAdapter(Context context, final List<Item> listParam) {
+        //noinspection AssignmentToCollectionOrArrayFieldFromParameter
+        this.list = listParam;
+        this.inflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
