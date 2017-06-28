@@ -14,4 +14,4 @@ local.properties
 /app/build
 /captures
 .externalNativeBuild
-/gradle
+.gradle
