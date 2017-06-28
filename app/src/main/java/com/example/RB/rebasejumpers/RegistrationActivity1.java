@@ -41,7 +41,6 @@ import static com.example.RB.rebasejumpers.LoginActivity.VALID_EMAIL_ADDRESS_REG
 /**
  * The type Registration activity 1.
  */
-@SuppressWarnings("ALL")
 public class RegistrationActivity1
         extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {

@@ -45,7 +45,6 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-@SuppressWarnings("ALL")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class LoginActivity
         extends AppCompatActivity
