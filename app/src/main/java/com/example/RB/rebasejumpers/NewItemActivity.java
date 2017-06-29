@@ -57,7 +57,9 @@ public class NewItemActivity extends AppCompatActivity {
 
         Item newItem = new Item(itemName, name);
 
-        mReference.child("items").child(name).setValue(newItem);
+        DatabaseReference newReference =  mReference.child("items").child(name).push();
+
+        newReference.setValue(newItem);
 
         startActivity(new Intent(NewItemActivity.this, ItemView.class));
     }
