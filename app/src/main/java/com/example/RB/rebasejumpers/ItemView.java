@@ -16,10 +16,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+
 /**
  * The type Item view.
  */
-@SuppressWarnings("ALL")
 public class ItemView extends AppCompatActivity {
 
     /**
@@ -60,14 +60,13 @@ public class ItemView extends AppCompatActivity {
             @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    ArrayList<Item> itemList = new ArrayList<>();
-
-                    String name = postSnapshot.child(
-                            "name").getValue().toString();
-                    String email = postSnapshot.child(
-                            "email").getValue().toString();
-                    itemList.add(new Item(name, email));
-
+                    ArrayList<Item> itemList = new ArrayList<Item>();
+                    for(DataSnapshot a: postSnapshot.getChildren()) {
+                        System.out.println(a.getKey());
+                        String name = a.child("name").getValue().toString();
+                        String email = a.child("email").getValue().toString();
+                        itemList.add(new Item(name, email));
+                    }
                     activityItemView = (ListView) findViewById(R.id.list_view);
                     activityItemView.setAdapter(
                             new ItemArrayAdapter(ItemView.this, itemList));
@@ -81,3 +80,6 @@ public class ItemView extends AppCompatActivity {
         });
     }
 }
+
+
+
