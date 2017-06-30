@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -66,24 +67,20 @@ class ItemArrayAdapter extends BaseAdapter {
         return vi;
     }
 
-    public List<Item> filter(String charText) {
-        charText = charText.toLowerCase();
-        if(searchList != null) {
-            searchList.clear();
-        }
-        if (charText.length() == 0) {
-            searchList.addAll(list);
+    List<Item> filter(String charText) {
+        List<Item> returnList = new ArrayList<>();
+        if (charText.equals("")){
+            returnList.addAll(list);
         } else {
-            for (Item  item : list) {
-                if (item.getName().toLowerCase()
-                        .contains(charText)) {
-                    System.out.println(item.getItemName());
-                    searchList.add(item);
+            if (!list.isEmpty()) {
+                for (Item item : list) {
+                    if (item.getItemName().contains(charText)) {
+                        returnList.add(item);
+                    }
                 }
             }
         }
-        return searchList;
+
+        return returnList;
     }
-
-
 }

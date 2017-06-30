@@ -34,45 +34,39 @@ public class ItemView extends AppCompatActivity {
      */
     private static final String TAG = "ItemView";
 
+    private EditText search_bar;
+
     public static ItemArrayAdapter firebaseAdapter;
 
+    //Firebase
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference mReference = mDatabase.getReference("items");
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
-        //Firebase
-        FirebaseDatabase mDatabase;
-        DatabaseReference mReference;
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_view);
 
-        // Initialize Authentication
-        mDatabase = FirebaseDatabase.getInstance();
-        mReference = mDatabase.getReference("items");
-
-        final EditText search_bar = (EditText) findViewById(R.id.search_bar);
+        search_bar = (EditText) findViewById(R.id.search_bar);
 
         search_bar.addTextChangedListener(new TextWatcher() {
 
                                               @Override
                                               public void afterTextChanged(Editable arg0) {
-                                                  // TODO Auto-generated method stub
-                                                  String text = search_bar.getText().toString().toLowerCase();
-                                                  firebaseAdapter.filter(text);
+                                                  setItemList();
                                               }
 
                                               @Override
                                               public void beforeTextChanged(CharSequence arg0, int arg1,
                                                                             int arg2, int arg3) {
-                                                  // TODO Auto-generated method stub
+                                                  setItemList();
                                               }
 
                                               @Override
                                               public void onTextChanged(CharSequence arg0, int arg1, int arg2,
                                                                         int arg3) {
-                                                  // TODO Auto-generated method stub
+                                                  setItemList();
                                               }
 
                                           });
@@ -85,7 +79,10 @@ public class ItemView extends AppCompatActivity {
             }
         });
 
-        // Grab items
+        setItemList();
+    }
+
+    private void setItemList() {
         mReference.orderByKey();
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -98,8 +95,17 @@ public class ItemView extends AppCompatActivity {
                         itemList.add(new Item(itemName, name));
                     }
                 }
+                // Grabs the view
                 activityItemView = (ListView) findViewById(R.id.list_view);
+
+                // Grabs the filter string (can be null)
+                String filterString = search_bar.getText().toString().toLowerCase();
+
+                // Creates me adapters
                 firebaseAdapter = new ItemArrayAdapter(ItemView.this, itemList);
+                firebaseAdapter = new ItemArrayAdapter(ItemView.this, firebaseAdapter.filter(filterString));
+
+                // Attaches the list
                 activityItemView.setAdapter(firebaseAdapter);
             }
 
