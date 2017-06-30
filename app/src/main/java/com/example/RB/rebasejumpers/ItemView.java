@@ -59,17 +59,17 @@ public class ItemView extends AppCompatActivity {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
+                ArrayList<Item> itemList = new ArrayList<>();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    ArrayList<Item> itemList = new ArrayList<>();
                     for(DataSnapshot a: postSnapshot.getChildren()) {
                         String itemName = a.child("itemName").getValue().toString();
                         String name = a.child("name").getValue().toString();
                         itemList.add(new Item(itemName, name));
                     }
-                    activityItemView = (ListView) findViewById(R.id.list_view);
-                    activityItemView.setAdapter(
-                            new ItemArrayAdapter(ItemView.this, itemList));
                 }
+                activityItemView = (ListView) findViewById(R.id.list_view);
+                activityItemView.setAdapter(
+                        new ItemArrayAdapter(ItemView.this, itemList));
             }
 
             @Override
