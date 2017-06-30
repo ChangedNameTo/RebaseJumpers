@@ -67,9 +67,9 @@ class ItemArrayAdapter extends BaseAdapter {
         return vi;
     }
 
-    List<Item> filter(String charText) {
+    List<Item> filter(CharSequence charText) {
         List<Item> returnList = new ArrayList<>();
-        if (charText.equals("")){
+        if ("".equals(charText)){
             returnList.addAll(list);
         } else {
             if (!list.isEmpty()) {

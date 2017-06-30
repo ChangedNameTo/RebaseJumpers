@@ -36,11 +36,11 @@ public class ItemView extends AppCompatActivity {
 
     private EditText search_bar;
 
-    public static ItemArrayAdapter firebaseAdapter;
+    private ItemArrayAdapter firebaseAdapter;
 
     //Firebase
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference mReference = mDatabase.getReference("items");
+    private final FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private final DatabaseReference mReference = mDatabase.getReference("items");
 
     /** Called when the activity is first created. */
     @Override
@@ -58,13 +58,18 @@ public class ItemView extends AppCompatActivity {
                                               }
 
                                               @Override
-                                              public void beforeTextChanged(CharSequence arg0, int arg1,
-                                                                            int arg2, int arg3) {
+                                              public void beforeTextChanged(CharSequence
+                                                                                    arg0,
+                                                                            int arg1,
+                                                                            int arg2,
+                                                                            int arg3) {
                                                   setItemList();
                                               }
 
                                               @Override
-                                              public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+                                              public void onTextChanged(CharSequence arg0,
+                                                                        int arg1,
+                                                                        int arg2,
                                                                         int arg3) {
                                                   setItemList();
                                               }

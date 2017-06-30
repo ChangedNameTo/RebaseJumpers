@@ -14,7 +14,6 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -219,42 +218,6 @@ public class RegistrationActivity1
                         emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
-    }
-
-    /**
-     * The type User.
-     */
-    public static class User {
-        /**
-         * The Email.
-         */
-        String email;
-        /**
-         * The Username.
-         */
-        String username;
-        /**
-         * The Password.
-         */
-        String password;
-
-        /**
-         * Instantiates a new User.
-         */
-        public User() { }
-
-        /**
-         * Instantiates a new User.
-         *
-         * @param email    the email
-         * @param username the username
-         * @param password the password
-         */
-        public User(String email, String username, String password) {
-            this.email = email;
-            this.username = username;
-            this.password = password;
-        }
     }
 
     private void populateAutoComplete() {

@@ -24,7 +24,7 @@ class Item {
      *
      * @return the name
      */
-    public String getName() {
+    public CharSequence getName() {
         return name;
     }
 
