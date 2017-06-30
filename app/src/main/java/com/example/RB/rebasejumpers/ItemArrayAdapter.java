@@ -17,6 +17,7 @@ class ItemArrayAdapter extends BaseAdapter {
 
     private LayoutInflater inflater = null;
     private final List<Item> list;
+    private final List<Item> searchList = null;
 
     /**
      * Instantiates a new Item array adapter.
@@ -46,6 +47,11 @@ class ItemArrayAdapter extends BaseAdapter {
         return position;
     }
 
+    public List<Item> getList() {
+        return list;
+    }
+
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
@@ -59,4 +65,25 @@ class ItemArrayAdapter extends BaseAdapter {
         name.setText(item.getName());
         return vi;
     }
+
+    public List<Item> filter(String charText) {
+        charText = charText.toLowerCase();
+        if(searchList != null) {
+            searchList.clear();
+        }
+        if (charText.length() == 0) {
+            searchList.addAll(list);
+        } else {
+            for (Item  item : list) {
+                if (item.getName().toLowerCase()
+                        .contains(charText)) {
+                    System.out.println(item.getItemName());
+                    searchList.add(item);
+                }
+            }
+        }
+        return searchList;
+    }
+
+
 }

@@ -5,7 +5,13 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context="com.example.RB.rebasejumpers.ItemView">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_bar">
 
+        <requestFocus/>
+    </EditText>
     <ListView
         android:id="@+id/list_view"
         android:layout_width="fill_parent"

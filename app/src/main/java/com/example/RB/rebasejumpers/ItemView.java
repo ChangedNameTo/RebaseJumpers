@@ -3,9 +3,12 @@ package com.example.RB.rebasejumpers;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +34,8 @@ public class ItemView extends AppCompatActivity {
      */
     private static final String TAG = "ItemView";
 
+    public static ItemArrayAdapter firebaseAdapter;
+
 
     /** Called when the activity is first created. */
     @Override
@@ -39,12 +44,38 @@ public class ItemView extends AppCompatActivity {
         FirebaseDatabase mDatabase;
         DatabaseReference mReference;
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_view);
 
         // Initialize Authentication
         mDatabase = FirebaseDatabase.getInstance();
         mReference = mDatabase.getReference("items");
+
+        final EditText search_bar = (EditText) findViewById(R.id.search_bar);
+
+        search_bar.addTextChangedListener(new TextWatcher() {
+
+                                              @Override
+                                              public void afterTextChanged(Editable arg0) {
+                                                  // TODO Auto-generated method stub
+                                                  String text = search_bar.getText().toString().toLowerCase();
+                                                  firebaseAdapter.filter(text);
+                                              }
+
+                                              @Override
+                                              public void beforeTextChanged(CharSequence arg0, int arg1,
+                                                                            int arg2, int arg3) {
+                                                  // TODO Auto-generated method stub
+                                              }
+
+                                              @Override
+                                              public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+                                                                        int arg3) {
+                                                  // TODO Auto-generated method stub
+                                              }
+
+                                          });
 
         Button newItemButton = (Button) findViewById(R.id.new_item);
         newItemButton.setOnClickListener(new View.OnClickListener() {
@@ -68,8 +99,8 @@ public class ItemView extends AppCompatActivity {
                     }
                 }
                 activityItemView = (ListView) findViewById(R.id.list_view);
-                activityItemView.setAdapter(
-                        new ItemArrayAdapter(ItemView.this, itemList));
+                firebaseAdapter = new ItemArrayAdapter(ItemView.this, itemList);
+                activityItemView.setAdapter(firebaseAdapter);
             }
 
             @Override
