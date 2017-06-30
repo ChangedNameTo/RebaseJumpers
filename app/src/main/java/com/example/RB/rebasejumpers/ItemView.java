@@ -60,12 +60,11 @@ public class ItemView extends AppCompatActivity {
             @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    ArrayList<Item> itemList = new ArrayList<Item>();
+                    ArrayList<Item> itemList = new ArrayList<>();
                     for(DataSnapshot a: postSnapshot.getChildren()) {
-                        System.out.println(a.getKey());
+                        String itemName = a.child("itemName").getValue().toString();
                         String name = a.child("name").getValue().toString();
-                        String email = a.child("email").getValue().toString();
-                        itemList.add(new Item(name, email));
+                        itemList.add(new Item(itemName, name));
                     }
                     activityItemView = (ListView) findViewById(R.id.list_view);
                     activityItemView.setAdapter(

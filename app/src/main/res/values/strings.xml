@@ -25,7 +25,6 @@
     <string name="registerNewUser">REGISTER NEW USER</string>
     <string name="newEmail">Create New Email: </string>
     <string name="newPassword">Create New Password:</string>
-    <string name="header">Header</string>
     <string name="createNewItem">Create New Item</string>
     <string name="missingItem">What item is missing?</string>
     <string name="submitItem">SUBMIT ITEM</string>

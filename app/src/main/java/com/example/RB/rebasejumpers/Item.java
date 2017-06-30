@@ -24,14 +24,15 @@ class Item {
      *
      * @return the name
      */
-    public CharSequence getName() {
-        if (itemName == null) {
-            return "System";
-        }
-        return itemName;
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getItemName() {
+        return itemName;
     }
 }

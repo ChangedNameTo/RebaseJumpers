@@ -53,8 +53,10 @@ class ItemArrayAdapter extends BaseAdapter {
             vi = inflater.inflate(R.layout.list_item, parent, false);
         }
         TextView text = (TextView) vi.findViewById(R.id.list_item);
+        TextView name = (TextView) vi.findViewById(R.id.item_name);
         Item item = list.get(position);
-        text.setText(item.getName());
+        text.setText(item.getItemName());
+        name.setText(item.getName());
         return vi;
     }
 }

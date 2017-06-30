@@ -3,6 +3,7 @@ package com.example.RB.rebasejumpers;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,22 +51,17 @@ public class NewItemActivity extends AppCompatActivity {
      * Puts a new item in the firebase db.
      */
     private void newItem() {
-        /*
-      The M auth.
-     */
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        /*
-      The M user.
-     */
-        FirebaseUser mUser = mAuth.getCurrentUser();
-
+        FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
         String name = null;
+
         if (mUser != null) {
-            name = mUser.getDisplayName();
+            name = mUser.getEmail();
+            name = name.replace(".", "");
+        } else {
+            Log.w("Warning", "Invalid User");
+            return;
         }
-        if (name == null) {
-            name = "System";
-        }
+
         String itemName = mItemName.getText().toString();
 
         Item newItem = new Item(itemName, name);
