@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -30,6 +31,7 @@ public class ItemView extends AppCompatActivity {
      * Error tag.
      */
     private static final String TAG = "ItemView";
+    private String isFound;
 
 
     /** Called when the activity is first created. */
@@ -54,24 +56,39 @@ public class ItemView extends AppCompatActivity {
             }
         });
 
+        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                if (checkBox.isChecked()) {
+                    isFound = "true";
+                } else {
+                    isFound = "false";
+                }
+            }
+        });
+
         // Grab items
         mReference.orderByKey();
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
+                ArrayList<Item> itemList = new ArrayList<>();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    ArrayList<Item> itemList = new ArrayList<>();
-
-                    String name = postSnapshot.child(
-                            "name").getValue().toString();
-                    String email = postSnapshot.child(
-                            "email").getValue().toString();
-                    itemList.add(new Item(name, email));
-
-                    activityItemView = (ListView) findViewById(R.id.list_view);
-                    activityItemView.setAdapter(
-                            new ItemArrayAdapter(ItemView.this, itemList));
+                    for(DataSnapshot a: postSnapshot.getChildren()) {
+                        String itemName = a.child("itemName").getValue().toString();
+                        String name = a.child("name").getValue().toString();
+                        Object checked = a.child("checked").getValue();
+                        if (checked != null) {
+                            itemList.add(new Item(itemName, name, (Boolean) checked));
+                        } else {
+                            itemList.add(new Item(itemName, name, false));
+                        }
+                    }
                 }
+                activityItemView = (ListView) findViewById(R.id.list_view);
+                activityItemView.setAdapter(
+                        new ItemArrayAdapter(ItemView.this, itemList));
             }
 
             @Override

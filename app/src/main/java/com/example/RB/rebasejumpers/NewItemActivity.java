@@ -58,7 +58,6 @@ public class NewItemActivity extends AppCompatActivity {
       The M user.
      */
         FirebaseUser mUser = mAuth.getCurrentUser();
-
         String name = null;
         if (mUser != null) {
             name = mUser.getDisplayName();
@@ -68,7 +67,7 @@ public class NewItemActivity extends AppCompatActivity {
         }
         String itemName = mItemName.getText().toString();
 
-        Item newItem = new Item(itemName, name);
+        Item newItem = new Item(itemName, name, true);
 
         DatabaseReference newRef = mReference.child("items").child(name).push();
         newRef.setValue(newItem);

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.List;
@@ -53,8 +54,12 @@ class ItemArrayAdapter extends BaseAdapter {
             vi = inflater.inflate(R.layout.list_item, parent, false);
         }
         TextView text = (TextView) vi.findViewById(R.id.list_item);
+        TextView name = (TextView) vi.findViewById(R.id.item_name);
+        CheckBox checkbox = (CheckBox) vi.findViewById(R.id.checkBox);
         Item item = list.get(position);
         text.setText(item.getName());
+        name.setText(item.getName());
+        checkbox.setChecked(item.isChecked());
         return vi;
     }
 }
