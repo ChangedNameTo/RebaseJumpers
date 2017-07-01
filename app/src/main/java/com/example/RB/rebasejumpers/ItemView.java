@@ -3,9 +3,12 @@ package com.example.RB.rebasejumpers;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,20 +34,47 @@ public class ItemView extends AppCompatActivity {
      */
     private static final String TAG = "ItemView";
 
+    private EditText search_bar;
+
+    private ItemArrayAdapter firebaseAdapter;
+
+    //Firebase
+    private final FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private final DatabaseReference mReference = mDatabase.getReference("items");
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
-        //Firebase
-        FirebaseDatabase mDatabase;
-        DatabaseReference mReference;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_view);
 
-        // Initialize Authentication
-        mDatabase = FirebaseDatabase.getInstance();
-        mReference = mDatabase.getReference("items");
+        search_bar = (EditText) findViewById(R.id.search_bar);
+
+        search_bar.addTextChangedListener(new TextWatcher() {
+
+                                              @Override
+                                              public void afterTextChanged(Editable arg0) {
+                                                  setItemList();
+                                              }
+
+                                              @Override
+                                              public void beforeTextChanged(CharSequence
+                                                                                    arg0,
+                                                                            int arg1,
+                                                                            int arg2,
+                                                                            int arg3) {
+                                                  setItemList();
+                                              }
+
+                                              @Override
+                                              public void onTextChanged(CharSequence arg0,
+                                                                        int arg1,
+                                                                        int arg2,
+                                                                        int arg3) {
+                                                  setItemList();
+                                              }
+
+                                          });
 
         Button newItemButton = (Button) findViewById(R.id.new_item);
         newItemButton.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +84,10 @@ public class ItemView extends AppCompatActivity {
             }
         });
 
-        // Grab items
+        setItemList();
+    }
+
+    private void setItemList() {
         mReference.orderByKey();
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -67,9 +100,18 @@ public class ItemView extends AppCompatActivity {
                         itemList.add(new Item(itemName, name));
                     }
                 }
+                // Grabs the view
                 activityItemView = (ListView) findViewById(R.id.list_view);
-                activityItemView.setAdapter(
-                        new ItemArrayAdapter(ItemView.this, itemList));
+
+                // Grabs the filter string (can be null)
+                String filterString = search_bar.getText().toString().toLowerCase();
+
+                // Creates me adapters
+                firebaseAdapter = new ItemArrayAdapter(ItemView.this, itemList);
+                firebaseAdapter = new ItemArrayAdapter(ItemView.this, firebaseAdapter.filter(filterString));
+
+                // Attaches the list
+                activityItemView.setAdapter(firebaseAdapter);
             }
 
             @Override

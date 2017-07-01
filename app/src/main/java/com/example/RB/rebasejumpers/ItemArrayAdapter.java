@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,6 +18,7 @@ class ItemArrayAdapter extends BaseAdapter {
 
     private LayoutInflater inflater = null;
     private final List<Item> list;
+    private final List<Item> searchList = null;
 
     /**
      * Instantiates a new Item array adapter.
@@ -46,6 +48,11 @@ class ItemArrayAdapter extends BaseAdapter {
         return position;
     }
 
+    public List<Item> getList() {
+        return list;
+    }
+
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
@@ -58,5 +65,22 @@ class ItemArrayAdapter extends BaseAdapter {
         text.setText(item.getItemName());
         name.setText(item.getName());
         return vi;
+    }
+
+    List<Item> filter(CharSequence charText) {
+        List<Item> returnList = new ArrayList<>();
+        if ("".equals(charText)){
+            returnList.addAll(list);
+        } else {
+            if (!list.isEmpty()) {
+                for (Item item : list) {
+                    if (item.getItemName().contains(charText)) {
+                        returnList.add(item);
+                    }
+                }
+            }
+        }
+
+        return returnList;
     }
 }
