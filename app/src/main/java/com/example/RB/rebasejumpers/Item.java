@@ -7,6 +7,7 @@ package com.example.RB.rebasejumpers;
 class Item {
     private final String itemName;
     private String name;
+    private Boolean checked;
 
     /**
      * Instantiates a new Item.
@@ -14,9 +15,10 @@ class Item {
      * @param itemName the item name
      * @param name     the name
      */
-    Item(String itemName, String name) {
+    Item(String itemName, String name, Boolean checked) {
         this.itemName = itemName;
         this.name = name;
+        this.checked = checked;
     }
 
     /**
@@ -32,7 +34,16 @@ class Item {
         this.name = name;
     }
 
-    public String getItemName() {
+    String getItemName() {
         return itemName;
+    }
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
+
+    Boolean isFound() {
+        return checked;
     }
 }

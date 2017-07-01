@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.CheckBox;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -97,7 +98,12 @@ public class ItemView extends AppCompatActivity {
                     for(DataSnapshot a: postSnapshot.getChildren()) {
                         String itemName = a.child("itemName").getValue().toString();
                         String name = a.child("name").getValue().toString();
-                        itemList.add(new Item(itemName, name));
+                        Object checked = a.child("checked").getValue();
+                        if (checked != null) {
+                            itemList.add(new Item(itemName, name, (Boolean) checked));
+                        } else {
+                            itemList.add(new Item(itemName, name, false));
+                        }
                     }
                 }
                 // Grabs the view

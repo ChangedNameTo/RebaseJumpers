@@ -51,7 +51,14 @@ public class NewItemActivity extends AppCompatActivity {
      * Puts a new item in the firebase db.
      */
     private void newItem() {
-        FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
+        /*
+      The M auth.
+     */
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        /*
+      The M user.
+     */
+        FirebaseUser mUser = mAuth.getCurrentUser();
         String name = null;
 
         if (mUser != null) {
@@ -64,7 +71,7 @@ public class NewItemActivity extends AppCompatActivity {
 
         String itemName = mItemName.getText().toString();
 
-        Item newItem = new Item(itemName, name);
+        Item newItem = new Item(itemName, name, false);
 
         DatabaseReference newReference =  mReference.child("items").child(name).push();
 
