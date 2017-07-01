@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
+<<<<<<< HEAD
     <entry_points version="2.0">
       <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.Item name" />
       <entry_point TYPE="method" FQNAME="com.example.RB.rebasejumpers.Item void setName(java.lang.String name)" />
