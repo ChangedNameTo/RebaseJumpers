@@ -17,10 +17,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+
 /**
  * The type Item view.
  */
-@SuppressWarnings("ALL")
 public class ItemView extends AppCompatActivity {
 
     /**
@@ -98,3 +98,6 @@ public class ItemView extends AppCompatActivity {
         });
     }
 }
+
+
+

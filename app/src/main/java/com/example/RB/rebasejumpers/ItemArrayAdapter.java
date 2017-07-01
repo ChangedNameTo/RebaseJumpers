@@ -57,9 +57,8 @@ class ItemArrayAdapter extends BaseAdapter {
         TextView name = (TextView) vi.findViewById(R.id.item_name);
         CheckBox checkbox = (CheckBox) vi.findViewById(R.id.checkBox);
         Item item = list.get(position);
-        text.setText(item.getName());
+        text.setText(item.getItemName());
         name.setText(item.getName());
-        checkbox.setChecked(item.isChecked());
         return vi;
     }
 }
