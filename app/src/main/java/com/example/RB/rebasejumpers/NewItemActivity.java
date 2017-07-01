@@ -71,7 +71,7 @@ public class NewItemActivity extends AppCompatActivity {
 
         String itemName = mItemName.getText().toString();
 
-        Item newItem = new Item(itemName, name, true);
+        Item newItem = new Item(itemName, name, false);
 
         DatabaseReference newReference =  mReference.child("items").child(name).push();
 

@@ -59,6 +59,7 @@ class ItemArrayAdapter extends BaseAdapter {
         Item item = list.get(position);
         text.setText(item.getItemName());
         name.setText(item.getName());
+        checkbox.setChecked(item.isFound());
         return vi;
     }
 }

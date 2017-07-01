@@ -31,7 +31,6 @@ public class ItemView extends AppCompatActivity {
      * Error tag.
      */
     private static final String TAG = "ItemView";
-    private String isFound;
 
 
     /** Called when the activity is first created. */
@@ -56,18 +55,6 @@ public class ItemView extends AppCompatActivity {
             }
         });
 
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox);
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                if (checkBox.isChecked()) {
-                    isFound = "true";
-                } else {
-                    isFound = "false";
-                }
-            }
-        });
-
         // Grab items
         mReference.orderByKey();
         mReference.addValueEventListener(new ValueEventListener() {
@@ -86,6 +73,8 @@ public class ItemView extends AppCompatActivity {
                         }
                     }
                 }
+
+
                 activityItemView = (ListView) findViewById(R.id.list_view);
                 activityItemView.setAdapter(
                         new ItemArrayAdapter(ItemView.this, itemList));

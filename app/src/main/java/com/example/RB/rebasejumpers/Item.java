@@ -26,7 +26,7 @@ class Item {
      *
      * @return the name
      */
-    public String getName() {
+    public CharSequence getName() {
         return name;
     }
 
@@ -34,7 +34,16 @@ class Item {
         this.name = name;
     }
 
-    public Boolean isChecked() {
+    String getItemName() {
+        return itemName;
+    }
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
+
+    Boolean isFound() {
         return checked;
     }
 }
