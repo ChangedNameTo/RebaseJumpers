@@ -4,7 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context="com.example.RB.rebasejumpers.ItemView">
+    tools:context="com.example.RB.rebasejumpers.ItemView"
+    android:weightSum="1">
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,8 +18,9 @@
     <ListView
         android:id="@+id/list_view"
         android:layout_width="fill_parent"
-        android:layout_height="504dp"
-        android:visibility="visible" />
+        android:layout_height="438dp"
+        android:visibility="visible"
+        android:layout_weight="0.34" />
 
     <Button
         android:id="@+id/new_item"

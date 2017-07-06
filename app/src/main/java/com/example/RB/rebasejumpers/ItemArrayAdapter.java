@@ -6,7 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,9 +73,43 @@ class ItemArrayAdapter extends BaseAdapter {
         TextView name = (TextView) vi.findViewById(R.id.item_name);
         CheckBox checkbox = (CheckBox) vi.findViewById(R.id.checkBox);
         Item item = list.get(position);
+        //
         text.setText(item.getItemName());
         name.setText(item.getName());
-        checkbox.setChecked(item.isFound());
+
+        checkbox.setTag(position);
+        checkbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckBox checkBox = (CheckBox) v;
+                int position = (int) checkBox.getTag();
+                final Item item = list.get(position);
+                item.setIsFound(checkBox.isChecked());
+
+                FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
+                if (mUser != null) {
+                    String name = mUser.getEmail();
+                    name = name.replace(".", "");
+                    DatabaseReference mReference = FirebaseDatabase.getInstance().getReference();
+                    mReference.child("items").child(name).orderByChild("itemName").equalTo
+                            (item.getItemName()).addListenerForSingleValueEvent(new
+                                ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            long count = dataSnapshot.getChildrenCount();
+                            for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                                postSnapshot.getRef().child("found").setValue(item.isFound());
+                            }
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+        });
+
         return vi;
     }
 

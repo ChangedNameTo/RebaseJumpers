@@ -29,4 +29,5 @@
     <string name="missingItem">What item is missing?</string>
     <string name="submitItem">SUBMIT ITEM</string>
     <string name="search_hint">Enter an item name…</string>
+    <string name="login">LOGIN</string>
 </resources>

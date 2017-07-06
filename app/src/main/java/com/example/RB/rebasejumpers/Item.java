@@ -46,4 +46,9 @@ class Item {
     Boolean isFound() {
         return checked;
     }
+
+    void setIsFound(Boolean checked) {
+        this.checked = checked;
+    }
+
 }
