@@ -34,6 +34,15 @@ public class LogoutScreen extends AppCompatActivity {
                         new Intent(LogoutScreen.this, ItemView.class));
             }
         });
+
+        Button mapViewButton = (Button) findViewById(R.id.maps_view_button);
+        mapViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                startActivity(
+                        new Intent(LogoutScreen.this, MapsActivity.class));
+            }
+        });
     }
 
 }

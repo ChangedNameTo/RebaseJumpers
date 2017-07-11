@@ -1,6 +1,9 @@
 package com.example.RB.rebasejumpers;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,6 +79,7 @@ class ItemArrayAdapter extends BaseAdapter {
         //
         text.setText(item.getItemName());
         name.setText(item.getName());
+        checkbox.setChecked(item.isFound());
 
         checkbox.setTag(position);
         checkbox.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +89,6 @@ class ItemArrayAdapter extends BaseAdapter {
                 int position = (int) checkBox.getTag();
                 final Item item = list.get(position);
                 item.setIsFound(checkBox.isChecked());
-
                 FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
                 if (mUser != null) {
                     String name = mUser.getEmail();

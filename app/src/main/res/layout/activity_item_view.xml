@@ -18,9 +18,9 @@
     <ListView
         android:id="@+id/list_view"
         android:layout_width="fill_parent"
-        android:layout_height="438dp"
+        android:layout_height="387dp"
         android:visibility="visible"
-        android:layout_weight="0.34" />
+        android:layout_weight="0.67" />
 
     <Button
         android:id="@+id/new_item"

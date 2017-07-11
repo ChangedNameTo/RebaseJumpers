@@ -8,11 +8,8 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,8 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
-import static android.widget.Toast.LENGTH_SHORT;
 
 
 /**
@@ -113,7 +108,7 @@ public class ItemView extends AppCompatActivity {
                         String name = a.child("name").getValue().toString();
                         Object checked = a.child("found").getValue();
                         if (checked == null) {
-                            itemList.add(new Item(itemName, name, (Boolean) checked));
+                            itemList.add(new Item(itemName, name, false));
                         } else {
                             itemList.add(new Item(itemName, name, (Boolean) checked));
                         }
