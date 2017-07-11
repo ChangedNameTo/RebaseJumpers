@@ -94,15 +94,18 @@ public class ItemView extends AppCompatActivity {
             @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
                 ArrayList<Item> itemList = new ArrayList<>();
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    for(DataSnapshot a: postSnapshot.getChildren()) {
-                        String itemName = a.child("itemName").getValue().toString();
-                        String name = a.child("name").getValue().toString();
-                        Object checked = a.child("checked").getValue();
+                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+                    for(DataSnapshot itemSnapshot: userSnapshot.getChildren()) {
+                        String itemName = itemSnapshot.child("itemName").getValue().toString();
+                        String name = itemSnapshot.child("name").getValue().toString();
+                        Object latitude = itemSnapshot.child("latitude").getValue();
+                        Object longitude = itemSnapshot.child("longitude").getValue();
+                        Object checked = itemSnapshot.child("checked").getValue();
                         if (checked != null) {
-                            itemList.add(new Item(itemName, name, (Boolean) checked));
+                            itemList.add(new Item(itemName, name, (Boolean) checked,
+                                    (double) latitude, (double) longitude));
                         } else {
-                            itemList.add(new Item(itemName, name, false));
+                            itemList.add(new Item(itemName, name, false, (double) latitude, (double) longitude));
                         }
                     }
                 }

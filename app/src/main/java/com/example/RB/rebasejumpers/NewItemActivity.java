@@ -62,8 +62,7 @@ public class NewItemActivity extends AppCompatActivity {
         String name = null;
 
         if (mUser != null) {
-            name = mUser.getEmail();
-            name = name.replace(".", "");
+            name = mUser.getEmail().replace(".", "");
         } else {
             Log.w("Warning", "Invalid User");
             return;
@@ -71,10 +70,13 @@ public class NewItemActivity extends AppCompatActivity {
 
         String itemName = mItemName.getText().toString();
 
-        Item newItem = new Item(itemName, name, false);
+        //TODO: Get these from current location???
+        double latitude = 33.779721;
+        double longitude = -84.399186;
+
+        Item newItem = new Item(itemName, name, false, latitude, longitude);
 
         DatabaseReference newReference =  mReference.child("items").child(name).push();
-
         newReference.setValue(newItem);
 
         startActivity(new Intent(NewItemActivity.this, ItemView.class));
