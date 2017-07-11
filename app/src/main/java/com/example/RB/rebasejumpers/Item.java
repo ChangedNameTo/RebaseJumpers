@@ -4,10 +4,12 @@ package com.example.RB.rebasejumpers;
 /**
  * The type Item.
  */
-class Item {
+public class Item {
     private final String itemName;
     private String name;
-    private Boolean checked;
+    private Boolean found;
+    private double latitude;
+    private double longitude;
 
     /**
      * Instantiates a new Item.
@@ -15,10 +17,12 @@ class Item {
      * @param itemName the item name
      * @param name     the name
      */
-    Item(String itemName, String name, Boolean checked) {
+    public Item(String itemName, String name, Boolean found, double latitude, double longitude) {
         this.itemName = itemName;
         this.name = name;
-        this.checked = checked;
+        this.found = found;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     /**
@@ -34,7 +38,7 @@ class Item {
         this.name = name;
     }
 
-    String getItemName() {
+    public String getItemName() {
         return itemName;
     }
     /**
@@ -43,7 +47,15 @@ class Item {
      * @return the name
      */
 
-    Boolean isFound() {
-        return checked;
+    public Boolean isFound() {
+        return found;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
     }
 }

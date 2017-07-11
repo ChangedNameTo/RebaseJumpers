@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * The type Item array adapter.
  */
-class ItemArrayAdapter extends BaseAdapter {
+public class ItemArrayAdapter extends BaseAdapter {
 
     private LayoutInflater inflater = null;
     private final List<Item> list;
