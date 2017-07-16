@@ -38,14 +38,14 @@ public class Item {
         this.name = name;
     }
 
-    public String getItemName() {
-        return itemName;
-    }
     /**
      * Gets name.
      *
      * @return the name
      */
+    String getItemName() {
+        return itemName;
+    }
 
     public Boolean isFound() {
         return found;
