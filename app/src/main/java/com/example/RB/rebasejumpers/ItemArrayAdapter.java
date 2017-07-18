@@ -1,15 +1,11 @@
 package com.example.RB.rebasejumpers;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,26 +42,51 @@ class ItemArrayAdapter extends BaseAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    /**
+     * Gets the count of the list size
+     * @return the count
+     */
     @Override
     public int getCount() {
         return list.size();
     }
 
+    /**
+     * Gets the item's position
+     * @param position the position number
+     * @return the object at that position
+     */
     @Override
     public Object getItem(int position) {
         return list.get(position);
     }
 
+    /**
+     * Gets the item's id
+     * @param position the position number
+     * @return the item's id in long form
+     */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    /**
+     * Gets the list
+     * @return the list of items
+     */
     public List<Item> getList() {
         return list;
     }
 
 
+    /**
+     * Gets the view of the items
+     * @param position the position number
+     * @param convertView the view that is converted
+     * @param parent the ViewGroup parent
+     * @return the view
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
@@ -97,13 +118,21 @@ class ItemArrayAdapter extends BaseAdapter {
                     mReference.child("items").child(name).orderByChild("itemName").equalTo
                             (item.getItemName()).addListenerForSingleValueEvent(new
                                 ValueEventListener() {
+                                    /**
+                                     * The onDataChange method to get the data from Firebase
+                                     * @param dataSnapshot each snapshot of data from Firebase
+                                     */
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            long count = dataSnapshot.getChildrenCount();
                             for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                                 postSnapshot.getRef().child("found").setValue(item.isFound());
                             }
                         }
+
+                                    /**
+                                     * The onCancelled method
+                                     * @param databaseError to catch the database error
+                                     */
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
 
@@ -116,6 +145,11 @@ class ItemArrayAdapter extends BaseAdapter {
         return vi;
     }
 
+    /**
+     * Filters through the items
+     * @param charText takes in the user's characters they type to search through the app
+     * @return the list of items corresponding to what the user typed in
+     */
     List<Item> filter(CharSequence charText) {
         List<Item> returnList = new ArrayList<>();
         if ("".equals(charText)){

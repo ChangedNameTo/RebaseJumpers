@@ -173,6 +173,12 @@ public class RegistrationActivity1
         return password.length() > 4;
     }
 
+    /**
+     * The onCreateLoader method
+     * @param i the integer i
+     * @param bundle the Bundle bundle
+     * @return the data loaded from the cursor
+     */
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return new CursorLoader(this,
@@ -192,11 +198,20 @@ public class RegistrationActivity1
                 ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
     }
 
+    /**
+     * The onLoaderReset method resets the loading data
+     * @param loader the loading data
+     */
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
     }
 
+    /**
+     * The onLoadFinished method
+     * @param cursorLoader the data being loaded
+     * @param cursor the cursor of the data
+     */
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
         List<String> emails = new ArrayList<>();
