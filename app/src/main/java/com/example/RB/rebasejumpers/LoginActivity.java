@@ -18,6 +18,7 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -135,21 +136,26 @@ public class LoginActivity
         forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                AlertDialog alertDialog =
-                        new AlertDialog.Builder(LoginActivity.this).create();
+                //noinspection ChainedMethodCall method breaks if not chained
+                AlertDialog alertDialog = new AlertDialog.Builder(LoginActivity.this).create();
                 alertDialog.setTitle("Forgotten Password");
 
-                mAuth.sendPasswordResetEmail(mEmailView.getText().toString())
+                Editable emailText = mEmailView.getText();
+                String emailString = emailText.toString();
+
+                //noinspection ChainedMethodCall Needed for onclick
+                mAuth.sendPasswordResetEmail(emailString)
                                 .addOnCompleteListener(
                                         new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(
                                             @NonNull final Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(
+                                            Toast pHolder = Toast.makeText(
                                                     LoginActivity.this,
                                                     "Email sent.",
-                                                    Toast.LENGTH_SHORT).show();
+                                                    Toast.LENGTH_SHORT);
+                                            pHolder.show();
                                         }
                                     }
                         });
@@ -177,6 +183,7 @@ public class LoginActivity
             return;
         }
 
+        //noinspection ChainedMethodCall Isn't chained
         getLoaderManager().initLoader(0, null, this);
     }
 
@@ -187,18 +194,18 @@ public class LoginActivity
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView,
+            Snackbar pHolder = Snackbar.make(mEmailView,
                     R.string.permission_rationale,
-                    Snackbar.LENGTH_INDEFINITE)
-                    .setAction(android.R.string.ok, new View.OnClickListener() {
-                        @Override
-                        @TargetApi(Build.VERSION_CODES.M)
-                        public void onClick(final View v) {
-                            requestPermissions(
-                                    new String[]{READ_CONTACTS},
-                                    REQUEST_READ_CONTACTS);
-                        }
-                    });
+                    Snackbar.LENGTH_INDEFINITE);
+            pHolder.setAction(android.R.string.ok, new View.OnClickListener() {
+                    @Override
+                    @TargetApi(Build.VERSION_CODES.M)
+                    public void onClick(final View v) {
+                        requestPermissions(
+                                new String[]{READ_CONTACTS},
+                                REQUEST_READ_CONTACTS);
+                    }
+                });
         } else {
             requestPermissions(new String[]{READ_CONTACTS},
                     REQUEST_READ_CONTACTS);
@@ -234,8 +241,11 @@ public class LoginActivity
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        Editable pHolder = mEmailView.getText();
+        String email = pHolder.toString();
+
+        pHolder = mPasswordView.getText();
+        String password = pHolder.toString();
 
         // Local variables
         boolean cancel = false;
@@ -268,6 +278,8 @@ public class LoginActivity
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress();
+
+            //noinspection ChainedMethodCall Needed for onclick
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this,
                             new OnCompleteListener<AuthResult>() {
@@ -283,9 +295,10 @@ public class LoginActivity
                             } else {
                                 // If sign in fails,
                                 // display a message to the user.
-                                Toast.makeText(LoginActivity.this,
+                                Toast pHolder = Toast.makeText(LoginActivity.this,
                                         "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                        Toast.LENGTH_SHORT);
+                                pHolder.show();
                                 numberOfTries++;
                                 sendToBan();
                                 cancelLogin();
@@ -313,10 +326,13 @@ public class LoginActivity
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
         // the progress spinner.
+
+        //noinspection ChainedMethodCall Needs chain
         int shortAnimTime = getResources().
                 getInteger(android.R.integer.config_shortAnimTime);
 
         mLoginFormView.setVisibility(View.GONE);
+        //noinspection ChainedMethodCall Needs chaining on the animate statement
         mLoginFormView.animate().setDuration(shortAnimTime).alpha(
                 0).setListener(new AnimatorListenerAdapter() {
             @Override
@@ -326,6 +342,7 @@ public class LoginActivity
         });
 
         mProgressView.setVisibility(View.VISIBLE);
+        //noinspection ChainedMethodCall Needs chaining on the animate statement
         mProgressView.animate().setDuration(shortAnimTime).alpha(
                 1).setListener(new AnimatorListenerAdapter() {
             @Override

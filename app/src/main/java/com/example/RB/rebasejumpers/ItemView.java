@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.CheckBox;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -94,13 +93,23 @@ public class ItemView extends AppCompatActivity {
             @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
                 ArrayList<Item> itemList = new ArrayList<>();
-                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                    for(DataSnapshot itemSnapshot: userSnapshot.getChildren()) {
-                        String itemName = itemSnapshot.child("itemName").getValue().toString();
-                        String name = itemSnapshot.child("name").getValue().toString();
-                        Object latitude = itemSnapshot.child("latitude").getValue();
-                        Object longitude = itemSnapshot.child("longitude").getValue();
-                        Object checked = itemSnapshot.child("checked").getValue();
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    for(DataSnapshot a : postSnapshot.getChildren()) {
+
+                        DataSnapshot itemSnapshot = a.child("itemName");
+                        Object itemSnapshotValue = itemSnapshot.getValue();
+                        String itemName = itemSnapshotValue.toString();
+
+                        DataSnapshot nameSnapshot = a.child("name");
+                        Object nameValue = nameSnapshot.getValue();
+                        String name = nameValue.toString();
+
+                        DataSnapshot checkedSnapshot = a.child("checked");
+                        Object checked = checkedSnapshot.getValue();
+
+                        Object latitude = a.child("latitude").getValue();
+                        Object longitude = a.child("longitude").getValue();
+
                         if (checked != null) {
                             itemList.add(new Item(itemName, name, (Boolean) checked,
                                     (double) latitude, (double) longitude));
@@ -113,11 +122,14 @@ public class ItemView extends AppCompatActivity {
                 activityItemView = (ListView) findViewById(R.id.list_view);
 
                 // Grabs the filter string (can be null)
-                String filterString = search_bar.getText().toString().toLowerCase();
+                Editable filterEditable = search_bar.getText();
+                String filterString = filterEditable.toString();
+                filterString = filterString.toLowerCase();
 
                 // Creates me adapters
                 firebaseAdapter = new ItemArrayAdapter(ItemView.this, itemList);
-                firebaseAdapter = new ItemArrayAdapter(ItemView.this, firebaseAdapter.filter(filterString));
+                firebaseAdapter = new ItemArrayAdapter(ItemView.this,
+                        firebaseAdapter.filter(filterString));
 
                 // Attaches the list
                 activityItemView.setAdapter(firebaseAdapter);
