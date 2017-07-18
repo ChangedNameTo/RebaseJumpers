@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.Checkable;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class ItemArrayAdapter extends BaseAdapter {
         }
         TextView text = (TextView) vi.findViewById(R.id.list_item);
         TextView name = (TextView) vi.findViewById(R.id.item_name);
-        CheckBox checkbox = (CheckBox) vi.findViewById(R.id.checkBox);
+        Checkable checkbox = (CheckBox) vi.findViewById(R.id.checkBox);
         Item item = list.get(position);
         text.setText(item.getItemName());
         name.setText(item.getName());
@@ -77,7 +78,8 @@ public class ItemArrayAdapter extends BaseAdapter {
         } else {
             if (!list.isEmpty()) {
                 for (Item item : list) {
-                    if (item.getItemName().contains(charText)) {
+                    String itemName = item.getItemName();
+                    if (itemName.contains(charText)) {
                         returnList.add(item);
                     }
                 }

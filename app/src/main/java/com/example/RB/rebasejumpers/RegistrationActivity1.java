@@ -14,6 +14,7 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -109,8 +110,11 @@ public class RegistrationActivity1
         mPasswordView.setError(null);
 
         // Grab the values from the form
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        Editable pHolder = mEmailView.getText();
+        String email = pHolder.toString();
+
+        pHolder = mPasswordView.getText();
+        String password = pHolder.toString();
 
         // Local vars
         View focusView = null;
@@ -135,6 +139,7 @@ public class RegistrationActivity1
         }
 
         if (!cancel) {
+            //noinspection ChainedMethodCall Need the chaining
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this,
                             new OnCompleteListener<AuthResult>() {
@@ -152,9 +157,10 @@ public class RegistrationActivity1
                                 Log.w(TAG,
                                         "createUserWithEmail:failure",
                                         task.getException());
-                                Toast.makeText(RegistrationActivity1.this,
+                                Toast pHolder = Toast.makeText(RegistrationActivity1.this,
                                         "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                        Toast.LENGTH_SHORT);
+                                pHolder.show();
                             }
                         }
                     });
@@ -225,6 +231,7 @@ public class RegistrationActivity1
             return;
         }
 
+        //noinspection ChainedMethodCall Needs the chaining
         getLoaderManager().initLoader(0, null, this);
     }
 
@@ -234,6 +241,7 @@ public class RegistrationActivity1
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
+            //noinspection ChainedMethodCall Needs the chaining
             Snackbar.make(mEmailView,
                     R.string.permission_rationale,
                     Snackbar.LENGTH_INDEFINITE)

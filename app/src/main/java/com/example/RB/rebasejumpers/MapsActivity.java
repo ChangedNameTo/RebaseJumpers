@@ -15,12 +15,17 @@ import com.google.firebase.database.*;
  * The type Maps activity.
  */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+    private static final float MIN_ZOOM = 12.0f;
+    private static final float MAX_ZOOM = 14.0f;
+    private static final double ATL_LAT = 33.779721;
+    private static final double ATL_LON = -84.399186;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        //noinspection ChainedMethodCall Needs chaining
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -37,14 +42,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * installed Google Play services and returned to the app.
      */
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        final GoogleMap mMap = googleMap;
+    public void onMapReady(final GoogleMap mMap) {
 
         // Sets default zooms
-        mMap.setMinZoomPreference(12.0f);
-        mMap.setMaxZoomPreference(14.0f);
+        mMap.setMinZoomPreference(MIN_ZOOM);
+        mMap.setMaxZoomPreference(MAX_ZOOM);
 
-        LatLng atlanta = new LatLng(33.779721, -84.399186);
+        LatLng atlanta = new LatLng(ATL_LAT, ATL_LON);
 //        mMap.addMarker(new MarkerOptions().position(atlanta).title("Marker in Atlanta"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(atlanta));
 

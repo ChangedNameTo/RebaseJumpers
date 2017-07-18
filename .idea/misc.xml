@@ -13,6 +13,8 @@
       <entry_point TYPE="class" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.User" />
       <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.ProfileQuery IS_PRIMARY" />
       <entry_point TYPE="class" FQNAME="com.example.RB.rebasejumpers.RegistrationActivity1.ProfileQuery" />
+      <entry_point TYPE="field" FQNAME="com.example.RB.rebasejumpers.ItemArrayAdapter searchList" />
+      <entry_point TYPE="method" FQNAME="com.example.RB.rebasejumpers.ItemArrayAdapter java.util.List&lt;com.example.RB.rebasejumpers.Item&gt; getList()" />
     </entry_points>
   </component>
   <component name="NullableNotNullManager">
