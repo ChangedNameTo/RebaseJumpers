@@ -42,7 +42,10 @@ public class ItemView extends AppCompatActivity {
     private final FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     private final DatabaseReference mReference = mDatabase.getReference("items");
 
-    /** Called when the activity is first created. */
+    /**
+     * The onCreate method
+     * @param savedInstanceState the Bundle of the instance state
+     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,29 +55,40 @@ public class ItemView extends AppCompatActivity {
 
         search_bar.addTextChangedListener(new TextWatcher() {
 
-                                              @Override
-                                              public void afterTextChanged(Editable arg0) {
-                                                  setItemList();
-                                              }
+            /**
+             * The afterTextChanged method
+             * @param arg0 the arguments from the user
+             */
+            @Override
+            public void afterTextChanged(Editable arg0) {
+                setItemList();
+            }
 
-                                              @Override
-                                              public void beforeTextChanged(CharSequence
-                                                                                    arg0,
-                                                                            int arg1,
-                                                                            int arg2,
-                                                                            int arg3) {
-                                                  setItemList();
-                                              }
+            /**
+             * The beforeTextChanged
+             * @param arg0 the 0th argument
+             * @param arg1 the 1st argument
+             * @param arg2 the 2nd argument
+             * @param arg3 the 3rd argument
+             */
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+                setItemList();
+            }
 
-                                              @Override
-                                              public void onTextChanged(CharSequence arg0,
-                                                                        int arg1,
-                                                                        int arg2,
-                                                                        int arg3) {
-                                                  setItemList();
-                                              }
+            /**
+             * The onTextChanged method
+             * @param arg0 the 0th argument
+             * @param arg1 the 1st argument
+             * @param arg2 the 2nd argument
+             * @param arg3 the 3rd argument
+             */
+            @Override
+            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+                setItemList();
+            }
 
-                                          });
+        });
 
         Button newItemButton = (Button) findViewById(R.id.new_item);
         newItemButton.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +149,10 @@ public class ItemView extends AppCompatActivity {
                 activityItemView.setAdapter(firebaseAdapter);
             }
 
+            /**
+             * The onCancelled method
+             * @param databaseError the DatabaseError message
+             */
             @Override
             public void onCancelled(final DatabaseError databaseError) {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());

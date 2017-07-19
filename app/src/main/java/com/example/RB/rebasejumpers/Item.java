@@ -1,6 +1,4 @@
 package com.example.RB.rebasejumpers;
-
-
 /**
  * The type Item.
  */
@@ -13,7 +11,6 @@ public class Item {
 
     /**
      * Instantiates a new Item.
-     *
      * @param itemName the item name
      * @param name     the name
      */
@@ -27,26 +24,32 @@ public class Item {
 
     /**
      * Gets name.
-     *
      * @return the name
      */
     public CharSequence getName() {
         return name;
     }
 
+    /**
+     * Sets name.
+     * @param name the name that we want to set the item to
+     */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Gets name.
-     *
-     * @return the name
+     * Gets the item's name.
+     * @return the name of the item
      */
     String getItemName() {
         return itemName;
     }
 
+    /**
+     * Gets the isFound boolean
+     * @return the boolean
+     */ 
     public Boolean isFound() {
         return found;
     }
@@ -58,4 +61,13 @@ public class Item {
     public double getLongitude() {
         return longitude;
     }
+
+    /**
+     * Sets the boolean checked.
+     * @param checked the boolean we are setting
+     */
+    void setIsFound(Boolean checked) {
+        this.checked = checked;
+    }
+
 }

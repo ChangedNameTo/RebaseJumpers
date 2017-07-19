@@ -34,11 +34,11 @@
             android:id="@+id/user_email_string"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textView3"
-            android:layout_below="@+id/textView3"
             android:layout_marginTop="14dp"
             android:ems="10"
-            android:inputType="textNoSuggestions|textEmailAddress" />
+            android:inputType="textNoSuggestions|textEmailAddress"
+            android:layout_below="@+id/textView3"
+            android:layout_alignStart="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView4"
@@ -54,7 +54,7 @@
             android:id="@+id/password_string"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="18dp"
             android:ems="10"
             android:inputType="textPassword"
             android:layout_below="@+id/textView4"
@@ -64,10 +64,10 @@
             android:id="@+id/registration_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/password_string"
-            android:layout_below="@+id/password_string"
             android:layout_marginTop="25dp"
-            android:text="@string/register" />
+            android:text="@string/register"
+            android:layout_below="@+id/password_string"
+            android:layout_alignStart="@+id/password_string" />
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

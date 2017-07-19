@@ -69,9 +69,6 @@ public class LoginActivity
     private View mProgressView;
     private View mLoginFormView;
 
-    //number of login attempts variable
-    private static int numberOfTries = 0;
-
     // Database references
     private FirebaseAuth mAuth;
 
@@ -114,19 +111,14 @@ public class LoginActivity
 
         Button registerButton = (Button) findViewById(R.id.register);
         registerButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * The onClick method
+             * @param view takes in the view
+             */
             @Override
             public void onClick(final View view) {
                 startActivity(new Intent(LoginActivity.this,
                         RegistrationActivity1.class));
-            }
-        });
-
-        Button bannedButton = (Button) findViewById(R.id.goToBanPage);
-        bannedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                startActivity(new Intent(LoginActivity.this,
-                        BannedUnbanned.class));
             }
         });
 
@@ -214,7 +206,11 @@ public class LoginActivity
     }
 
     /**
-     * Callback received when a permissions request has been completed.
+     * The onRequestPermissionsResult is a callback received when permissions request has been
+     * completed
+     * @param requestCode the integer request code
+     * @param permissions the String array of permissions
+     * @param grantResults the integer array of the results
      */
     @Override
     public void onRequestPermissionsResult(final int requestCode,
@@ -365,12 +361,12 @@ public class LoginActivity
         startActivity(new Intent(LoginActivity.this, LoginActivity.class));
     }
 
-    private void sendToBan() {
-        if (numberOfTries == 3) {
-            startActivity(new Intent(LoginActivity.this, BannedUnbanned.class));
-        }
-    }
-
+    /**
+     * The onCreateLoader to get the profile of the user
+     * @param i an integer i
+     * @param bundle the final Bundle
+     * @return the Loader coming from the Cursor
+     */
     @Override
     @TargetApi(Build.VERSION_CODES.M)
     public Loader<Cursor> onCreateLoader(final int i, final Bundle bundle) {
@@ -391,6 +387,11 @@ public class LoginActivity
                 ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
     }
 
+    /**
+     * The onLoadFinished loads the data after the user logs in
+     * @param cursorLoader loads all the data
+     * @param cursor the cursor to load the data
+     */
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
         List<String> emails = new ArrayList<>();
@@ -403,6 +404,10 @@ public class LoginActivity
         addEmailsToAutoComplete(emails);
     }
 
+    /**
+     * The onLoaderReset method
+     * @param cursorLoader loads all the data
+     */
     @Override
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
 
