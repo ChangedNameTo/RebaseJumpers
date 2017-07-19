@@ -108,14 +108,27 @@ public class ItemView extends AppCompatActivity {
             public void onDataChange(final DataSnapshot dataSnapshot) {
                 ArrayList<Item> itemList = new ArrayList<>();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    for(DataSnapshot a: postSnapshot.getChildren()) {
-                        String itemName = a.child("itemName").getValue().toString();
-                        String name = a.child("name").getValue().toString();
-                        Object checked = a.child("found").getValue();
-                        if (checked == null) {
-                            itemList.add(new Item(itemName, name, false));
+                    for(DataSnapshot a : postSnapshot.getChildren()) {
+
+                        DataSnapshot itemSnapshot = a.child("itemName");
+                        Object itemSnapshotValue = itemSnapshot.getValue();
+                        String itemName = itemSnapshotValue.toString();
+
+                        DataSnapshot nameSnapshot = a.child("name");
+                        Object nameValue = nameSnapshot.getValue();
+                        String name = nameValue.toString();
+
+                        DataSnapshot checkedSnapshot = a.child("checked");
+                        Object checked = checkedSnapshot.getValue();
+
+                        Object latitude = a.child("latitude").getValue();
+                        Object longitude = a.child("longitude").getValue();
+
+                        if (checked != null) {
+                            itemList.add(new Item(itemName, name, (Boolean) checked,
+                                    (double) latitude, (double) longitude));
                         } else {
-                            itemList.add(new Item(itemName, name, (Boolean) checked));
+                            itemList.add(new Item(itemName, name, false, (double) latitude, (double) longitude));
                         }
                     }
                 }
@@ -123,12 +136,14 @@ public class ItemView extends AppCompatActivity {
                 activityItemView = (ListView) findViewById(R.id.list_view);
 
                 // Grabs the filter string (can be null)
-                String filterString = search_bar.getText().toString().toLowerCase();
+                Editable filterEditable = search_bar.getText();
+                String filterString = filterEditable.toString();
+                filterString = filterString.toLowerCase();
 
                 // Creates me adapters
                 firebaseAdapter = new ItemArrayAdapter(ItemView.this, itemList);
-                firebaseAdapter = new ItemArrayAdapter(ItemView.this, firebaseAdapter.filter(
-                        filterString));
+                firebaseAdapter = new ItemArrayAdapter(ItemView.this,
+                        firebaseAdapter.filter(filterString));
 
                 // Attaches the list
                 activityItemView.setAdapter(firebaseAdapter);
