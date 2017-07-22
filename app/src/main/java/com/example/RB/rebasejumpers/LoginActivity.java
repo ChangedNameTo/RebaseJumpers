@@ -5,18 +5,18 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.CursorLoader;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.Loader;
+import android.content.*;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.location.LocationListener;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -31,6 +31,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.*;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -41,6 +46,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -72,12 +79,14 @@ public class LoginActivity
     // Database references
     private FirebaseAuth mAuth;
 
+    private GoogleApiClient googleApiClient;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize Authentication
+       // Initialize Authentication
         mAuth = FirebaseAuth.getInstance();
 
         // Set up the login form.
@@ -206,27 +215,6 @@ public class LoginActivity
     }
 
     /**
-     * The onRequestPermissionsResult is a callback received when permissions request has been
-     * completed
-     * @param requestCode the integer request code
-     * @param permissions the String array of permissions
-     * @param grantResults the integer array of the results
-     */
-    @Override
-    public void onRequestPermissionsResult(final int requestCode,
-                                           @NonNull final String[] permissions,
-                                           @NonNull final int[] grantResults) {
-        if (requestCode == REQUEST_READ_CONTACTS) {
-            if ((grantResults.length == 1)
-                    && (grantResults[0]
-                    == PackageManager.PERMISSION_GRANTED)) {
-                populateAutoComplete();
-            }
-        }
-    }
-
-
-    /**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
@@ -295,8 +283,8 @@ public class LoginActivity
                                         "Authentication failed.",
                                         Toast.LENGTH_SHORT);
                                 pHolder.show();
-                                numberOfTries++;
-                                sendToBan();
+//                                numberOfTries++;
+//                                sendToBan();
                                 cancelLogin();
                             }
                         }
@@ -360,6 +348,7 @@ public class LoginActivity
     private void cancelLogin() {
         startActivity(new Intent(LoginActivity.this, LoginActivity.class));
     }
+
 
     /**
      * The onCreateLoader to get the profile of the user
