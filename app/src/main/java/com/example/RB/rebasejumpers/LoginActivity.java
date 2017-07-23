@@ -24,13 +24,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -72,12 +67,14 @@ public class LoginActivity
     // Database references
     private FirebaseAuth mAuth;
 
+    private GoogleApiClient googleApiClient;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize Authentication
+       // Initialize Authentication
         mAuth = FirebaseAuth.getInstance();
 
         // Set up the login form.
@@ -206,27 +203,6 @@ public class LoginActivity
     }
 
     /**
-     * The onRequestPermissionsResult is a callback received when permissions request has been
-     * completed
-     * @param requestCode the integer request code
-     * @param permissions the String array of permissions
-     * @param grantResults the integer array of the results
-     */
-    @Override
-    public void onRequestPermissionsResult(final int requestCode,
-                                           @NonNull final String[] permissions,
-                                           @NonNull final int[] grantResults) {
-        if (requestCode == REQUEST_READ_CONTACTS) {
-            if ((grantResults.length == 1)
-                    && (grantResults[0]
-                    == PackageManager.PERMISSION_GRANTED)) {
-                populateAutoComplete();
-            }
-        }
-    }
-
-
-    /**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
@@ -295,8 +271,8 @@ public class LoginActivity
                                         "Authentication failed.",
                                         Toast.LENGTH_SHORT);
                                 pHolder.show();
-                                numberOfTries++;
-                                sendToBan();
+//                                numberOfTries++;
+//                                sendToBan();
                                 cancelLogin();
                             }
                         }
@@ -360,6 +336,7 @@ public class LoginActivity
     private void cancelLogin() {
         startActivity(new Intent(LoginActivity.this, LoginActivity.class));
     }
+
 
     /**
      * The onCreateLoader to get the profile of the user

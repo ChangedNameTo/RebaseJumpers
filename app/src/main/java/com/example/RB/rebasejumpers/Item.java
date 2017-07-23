@@ -42,32 +42,40 @@ public class Item {
      * Gets the item's name.
      * @return the name of the item
      */
-    String getItemName() {
+    public String getItemName() {
         return itemName;
     }
 
     /**
      * Gets the isFound boolean
      * @return the boolean
-     */ 
+     */
     public Boolean isFound() {
         return found;
     }
 
+    /**
+     * Gets the latitude of the item
+     * @return the boolean
+     */
     public double getLatitude() {
         return latitude;
     }
 
+    /**
+     * Gets the longitude of the item
+     * @return the boolean
+     */
     public double getLongitude() {
         return longitude;
     }
 
     /**
      * Sets the boolean checked.
-     * @param checked the boolean we are setting
+     * @param found the boolean we are setting
      */
-    void setIsFound(Boolean checked) {
-        this.checked = checked;
+    void setIsFound(Boolean found) {
+        this.found = found;
     }
 
 }

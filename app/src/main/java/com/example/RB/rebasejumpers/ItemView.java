@@ -110,25 +110,17 @@ public class ItemView extends AppCompatActivity {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     for(DataSnapshot a : postSnapshot.getChildren()) {
 
-                        DataSnapshot itemSnapshot = a.child("itemName");
-                        Object itemSnapshotValue = itemSnapshot.getValue();
-                        String itemName = itemSnapshotValue.toString();
-
-                        DataSnapshot nameSnapshot = a.child("name");
-                        Object nameValue = nameSnapshot.getValue();
-                        String name = nameValue.toString();
-
-                        DataSnapshot checkedSnapshot = a.child("checked");
-                        Object checked = checkedSnapshot.getValue();
-
-                        Object latitude = a.child("latitude").getValue();
-                        Object longitude = a.child("longitude").getValue();
+                        String itemName = a.child("itemName").getValue().toString();
+                        String name = a.child("name").getValue().toString();
+                        Boolean checked = (Boolean) a.child("checked").getValue();
+                        Double latitude = (Double) a.child("latitude").getValue();
+                        Double longitude = (Double) a.child("longitude").getValue();
 
                         if (checked != null) {
-                            itemList.add(new Item(itemName, name, (Boolean) checked,
-                                    (double) latitude, (double) longitude));
+                            itemList.add(new Item(itemName, name, checked,
+                                    latitude, longitude));
                         } else {
-                            itemList.add(new Item(itemName, name, false, (double) latitude, (double) longitude));
+                            itemList.add(new Item(itemName, name, false, latitude, longitude));
                         }
                     }
                 }

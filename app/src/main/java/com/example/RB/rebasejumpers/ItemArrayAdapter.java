@@ -6,16 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.Checkable;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +90,7 @@ public class ItemArrayAdapter extends BaseAdapter {
         }
         TextView text = (TextView) vi.findViewById(R.id.list_item);
         TextView name = (TextView) vi.findViewById(R.id.item_name);
-        Checkable checkbox = (CheckBox) vi.findViewById(R.id.checkBox);
+        CheckBox checkbox = (CheckBox) vi.findViewById(R.id.checkBox);
         Item item = list.get(position);
         //
         text.setText(item.getItemName());

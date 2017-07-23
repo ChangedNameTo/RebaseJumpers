@@ -8,6 +8,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.*;
 
@@ -40,7 +41,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
-     * @param googleMap the Google Map
+     * @param mMap the Google Map
      */
     @Override
     public void onMapReady(final GoogleMap mMap) {
@@ -65,6 +66,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 Object longitude = a.child("longitude").getValue();
                                 LatLng itemLoc = new LatLng((double) latitude, (double) longitude);
                                 mMap.addMarker(new MarkerOptions().position(itemLoc).title(itemName));
+                                mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                                    @Override
+                                    public boolean onMarkerClick(Marker marker) {
+                                        marker.showInfoWindow();
+                                        return true;
+                                    }
+                                });
                             }
                         }
                     }

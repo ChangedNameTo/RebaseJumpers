@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -35,10 +36,11 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:10.2.6'
     compile 'com.google.firebase:firebase-database:10.2.6'
     compile 'com.google.android.gms:play-services-auth:10.2.6'
+    compile 'com.google.android.gms:play-services:10.2.6'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //noinspection GradleDependency
-    compile 'com.google.android.gms:play-services-maps:10.2.6'
+    compile 'com.android.support:multidex:1.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
