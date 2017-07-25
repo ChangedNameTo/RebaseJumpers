@@ -51,7 +51,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setMaxZoomPreference(MAX_ZOOM);
 
         LatLng atlanta = new LatLng(ATL_LAT, ATL_LON);
-//        mMap.addMarker(new MarkerOptions().position(atlanta).title("Marker in Atlanta"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(atlanta));
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("items");
