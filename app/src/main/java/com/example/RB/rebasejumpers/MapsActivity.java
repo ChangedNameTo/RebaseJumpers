@@ -51,7 +51,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setMaxZoomPreference(MAX_ZOOM);
 
         LatLng atlanta = new LatLng(ATL_LAT, ATL_LON);
-//        mMap.addMarker(new MarkerOptions().position(atlanta).title("Marker in Atlanta"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(atlanta));
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("items");
@@ -61,11 +60,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                             for(DataSnapshot a: postSnapshot.getChildren()) {
+                                String name = a.child("name").getValue().toString();
                                 String itemName = a.child("itemName").getValue().toString();
                                 Object latitude = a.child("latitude").getValue();
                                 Object longitude = a.child("longitude").getValue();
                                 LatLng itemLoc = new LatLng((double) latitude, (double) longitude);
-                                mMap.addMarker(new MarkerOptions().position(itemLoc).title(itemName));
+                                mMap.addMarker(new MarkerOptions()
+                                        .position(itemLoc)
+                                        .title(name.split("@")[0] + "'s " + itemName)
+                                        .flat(false));
                                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                                     @Override
                                     public boolean onMarkerClick(Marker marker) {
